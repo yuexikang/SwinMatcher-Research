@@ -1,0 +1,77 @@
+wandb_version: 1
+
+_wandb:
+  desc: null
+  value:
+    python_version: 3.10.20
+    cli_version: 0.15.12
+    framework: lightning
+    is_jupyter_run: false
+    is_kaggle_kernel: false
+    start_time: 1784018144.589178
+    t:
+      1:
+      - 1
+      - 5
+      - 9
+      - 41
+      - 49
+      - 53
+      - 55
+      - 63
+      - 79
+      - 80
+      2:
+      - 1
+      - 5
+      - 9
+      - 41
+      - 49
+      - 53
+      - 55
+      - 63
+      - 79
+      - 80
+      3:
+      - 7
+      - 13
+      - 23
+      4: 3.10.20
+      5: 0.15.12
+      8:
+      - 8
+      13: linux-x86_64
+    m:
+    - 1: trainer/global_step
+      6:
+      - 3
+data_cfg_path:
+  desc: null
+  value: configs/swinmatcherbit_stage1_512.py
+main_cfg_path:
+  desc: null
+  value: configs/swinmatcher_ds.py
+batch_size_per_gpu:
+  desc: null
+  value: 2
+world_size:
+  desc: null
+  value: 1
+true_batch_size:
+  desc: null
+  value: 2
+true_lr:
+  desc: null
+  value: 0.00025
+warmup_epochs:
+  desc: null
+  value: 5
+warmup_steps:
+  desc: null
+  value: 4570
+train_manifest_path:
+  desc: null
+  value: manifests/train_SwinMatcherBIT_h30_gt_optical_optical.jsonl
+pseudo_thermal_prob:
+  desc: null
+  value: 0.0

@@ -7,7 +7,8 @@ __pycache__/
 
 ####
 *.ckpt
-
+outputs/training/**/events.out.tfevents.*
+outputs/training/**/checkpoints/
 outputs_demo/
 *.png
 ###

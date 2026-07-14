@@ -50,13 +50,13 @@ class FineMatching(nn.Module):
             })
             return
 
-        # normalize
-        feat_f0, feat_f1 = map(lambda feat: feat / feat.shape[-1] ** .5,
-                               [feat_f0_unfold, feat_f1_unfold])
-        sim_matrix = torch.einsum("nlc,nsc->nls", feat_f0,
-                                  feat_f1) / self.temperature
-
-        conf_matrix_fine = F.softmax(sim_matrix, 1) * F.softmax(sim_matrix, 2)
+        # Keep this small [M, W^2, W^2] confidence computation in FP32. The
+        # product of two softmaxes is otherwise prone to FP16 underflow.
+        with torch.cuda.amp.autocast(enabled=False):
+            feat_f0 = feat_f0_unfold.float() / feat_f0_unfold.shape[-1] ** .5
+            feat_f1 = feat_f1_unfold.float() / feat_f1_unfold.shape[-1] ** .5
+            sim_matrix = torch.einsum("nlc,nsc->nls", feat_f0, feat_f1) / float(self.temperature)
+            conf_matrix_fine = F.softmax(sim_matrix, dim=1) * F.softmax(sim_matrix, dim=2)
         data.update({'conf_matrix_fine': conf_matrix_fine})
 
         # predict fine-level and sub-pixel matches from conf_matrix
