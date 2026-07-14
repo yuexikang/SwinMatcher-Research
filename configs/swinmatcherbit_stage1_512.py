@@ -2,7 +2,7 @@ from src.config.default import _CN as cfg
 
 cfg.DATASET.TRAINVAL_DATA_SOURCE = "Multi-Modality"
 cfg.DATASET.TRAIN_DATA_ROOT = None
-cfg.DATASET.TRAIN_MANIFEST_PATH = "manifests/train_SwinMatcherBIT_h30_gt.jsonl"
+cfg.DATASET.TRAIN_MANIFEST_PATH = "manifests/train_SwinMatcherBIT_h30_gt_optical_optical.jsonl"
 cfg.DATASET.TEST_MANIFEST_PATH = "manifests/test_SwinMatcherBIT_gt_optical_optical.jsonl"
 cfg.DATASET.PSEUDO_THERMAL_PROB = 0.0
 
@@ -13,11 +13,12 @@ cfg.DATASET.MGDPT_DF = 8
 cfg.TRAINER.OPTIMIZER = "adamw"
 cfg.TRAINER.ADAMW_DECAY = 0.1
 cfg.TRAINER.CANONICAL_BS = 64
-cfg.TRAINER.CANONICAL_LR = 2e-3
-cfg.TRAINER.WARMUP_RATIO = 0.0
+cfg.TRAINER.CANONICAL_LR = 8e-3
+cfg.TRAINER.WARMUP_RATIO = 0.1
 cfg.TRAINER.WARMUP_STEP = 0
-cfg.TRAINER.MAX_EPOCHS = 15
+cfg.TRAINER.WARMUP_EPOCHS = 5
+cfg.TRAINER.MAX_EPOCHS = 30
 cfg.TRAINER.SCHEDULER = "MultiStepLR"
-cfg.TRAINER.MSLR_MILESTONES = [5, 10, 13]
+cfg.TRAINER.MSLR_MILESTONES = [10, 15, 20, 25]
 cfg.TRAINER.MSLR_GAMMA = 0.5
 cfg.TRAINER.VAL_BATCHES = 1.0

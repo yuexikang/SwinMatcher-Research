@@ -152,6 +152,7 @@ class MultiModality(Dataset):
         # TODO: Support augmentation & handle seeds for each worker correctly.
         # ----- pretrain -----
         thermal_option0, thermal_option1 = False, False
+        apply_gamma = self.mode == 'train'
         # ----- pseudo cross-modal enhancement -----
         if self.mode == 'train' and self.pseudo_thermal_prob > 0 and random.random() < self.pseudo_thermal_prob:
             if random.choice([0, 1]) == 0:
@@ -161,12 +162,14 @@ class MultiModality(Dataset):
 
         # noinspection PyTypeChecker
         image0, mask0, scale0 = read_multi_modality_gray(
-            item["image0_path"], self.img_resize, self.df, self.img_padding, None, thermal_option0)
+            item["image0_path"], self.img_resize, self.df, self.img_padding, None,
+            thermal_option0, apply_gamma)
         # np.random.choice([self.augment_fn, None], p=[0.5, 0.5]))
 
         # noinspection PyTypeChecker
         image1, mask1, scale1 = read_multi_modality_gray(
-            item["image1_path"], self.img_resize, self.df, self.img_padding, None, thermal_option1)
+            item["image1_path"], self.img_resize, self.df, self.img_padding, None,
+            thermal_option1, apply_gamma)
         # np.random.choice([self.augment_fn, None], p=[0.5, 0.5]))
 
         # read and compute relative poses

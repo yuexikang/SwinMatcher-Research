@@ -99,6 +99,25 @@ def _coarse_diagnostics(batch, coarse_thr=0.3):
     if 'spv_b_ids' in batch and torch.is_tensor(batch['spv_b_ids']):
         diagnostics['coarse/supervision_matches'] = batch['spv_b_ids'].detach().numel()
 
+    conf_gt = batch.get('conf_matrix_gt')
+    if torch.is_tensor(conf_gt):
+        gt_mask = conf_gt.detach() > 0
+        positives_per_source = gt_mask.sum(dim=2)
+        positives_per_target = gt_mask.sum(dim=1)
+        source_with_positive = positives_per_source > 0
+        target_with_positive = positives_per_target > 0
+        diagnostics.update({
+            'coarse/gt_positive_count': gt_mask.sum(),
+            'coarse/gt_sources_with_positive': source_with_positive.sum(),
+            'coarse/gt_targets_with_positive': target_with_positive.sum(),
+            'coarse/gt_multi_positive_source_ratio': (
+                (positives_per_source[source_with_positive] > 1).float().mean()
+                if source_with_positive.any() else gt_mask.new_tensor(0.0, dtype=torch.float)),
+            'coarse/gt_multi_positive_target_ratio': (
+                (positives_per_target[target_with_positive] > 1).float().mean()
+                if target_with_positive.any() else gt_mask.new_tensor(0.0, dtype=torch.float)),
+        })
+
     conf0 = batch.get('conf_matrix_0_to_1')
     conf1 = batch.get('conf_matrix_1_to_0')
     if torch.is_tensor(conf0) and torch.is_tensor(conf1):

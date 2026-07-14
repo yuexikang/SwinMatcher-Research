@@ -1,0 +1,195 @@
+wandb_version: 1
+
+_wandb:
+  desc: null
+  value:
+    python_version: 3.10.20
+    cli_version: 0.15.12
+    framework: lightning
+    is_jupyter_run: false
+    is_kaggle_kernel: false
+    start_time: 1783687135.321255
+    t:
+      1:
+      - 1
+      - 5
+      - 9
+      - 41
+      - 49
+      - 53
+      - 55
+      - 63
+      - 79
+      - 80
+      2:
+      - 1
+      - 5
+      - 9
+      - 41
+      - 49
+      - 53
+      - 55
+      - 63
+      - 79
+      - 80
+      3:
+      - 7
+      - 13
+      - 23
+      4: 3.10.20
+      5: 0.15.12
+      8:
+      - 8
+      13: linux-x86_64
+    m:
+    - 1: trainer/global_step
+      6:
+      - 3
+    - 1: visualizations/latest_features._type
+      5: 1
+      6:
+      - 1
+    - 1: visualizations/latest_features.sha256
+      5: 1
+      6:
+      - 1
+    - 1: visualizations/latest_features.size
+      5: 1
+      6:
+      - 1
+    - 1: visualizations/latest_features.path
+      5: 1
+      6:
+      - 1
+    - 1: visualizations/latest_features.format
+      5: 1
+      6:
+      - 1
+    - 1: visualizations/latest_features.width
+      5: 1
+      6:
+      - 1
+    - 1: visualizations/latest_features.height
+      5: 1
+      6:
+      - 1
+    - 1: visualizations/latest_features.caption
+      5: 1
+      6:
+      - 1
+    - 1: visualizations/latest_matches._type
+      5: 1
+      6:
+      - 1
+    - 1: visualizations/latest_matches.sha256
+      5: 1
+      6:
+      - 1
+    - 1: visualizations/latest_matches.size
+      5: 1
+      6:
+      - 1
+    - 1: visualizations/latest_matches.path
+      5: 1
+      6:
+      - 1
+    - 1: visualizations/latest_matches.format
+      5: 1
+      6:
+      - 1
+    - 1: visualizations/latest_matches.width
+      5: 1
+      6:
+      - 1
+    - 1: visualizations/latest_matches.height
+      5: 1
+      6:
+      - 1
+    - 1: visualizations/latest_matches.caption
+      5: 1
+      6:
+      - 1
+    - 1: lr-AdamW
+      5: 1
+      6:
+      - 1
+    - 1: train/loss_c
+      5: 1
+      6:
+      - 1
+    - 1: train/loss_f
+      5: 1
+      6:
+      - 1
+    - 1: train/loss_sub
+      5: 1
+      6:
+      - 1
+    - 1: train/loss
+      5: 1
+      6:
+      - 1
+    - 1: epoch
+      5: 1
+      6:
+      - 1
+    - 1: val/NCM
+      5: 1
+      6:
+      - 1
+    - 1: val/Pre
+      5: 1
+      6:
+      - 1
+    - 1: val/SR
+      5: 1
+      6:
+      - 1
+    - 1: val/RMSE
+      5: 1
+      6:
+      - 1
+    - 1: val/mean_matches
+      5: 1
+      6:
+      - 1
+    - 1: train/epoch_avg_loss
+      5: 1
+      6:
+      - 1
+    - 1: train/epoch_avg_loss_c
+      5: 1
+      6:
+      - 1
+    - 1: train/epoch_avg_loss_f
+      5: 1
+      6:
+      - 1
+    - 1: train/epoch_avg_loss_sub
+      5: 1
+      6:
+      - 1
+data_cfg_path:
+  desc: null
+  value: configs/swinmatcherbit_stage3_512.py
+main_cfg_path:
+  desc: null
+  value: configs/swinmatcher_ds.py
+batch_size_per_gpu:
+  desc: null
+  value: 3
+world_size:
+  desc: null
+  value: 1
+true_batch_size:
+  desc: null
+  value: 3
+true_lr:
+  desc: null
+  value: 9.375e-05
+train_manifest_path:
+  desc: null
+  value: manifests/train_SwinMatcherBIT_gt_optical_optical.jsonl
+pseudo_thermal_prob:
+  desc: null
+  value: 1.0

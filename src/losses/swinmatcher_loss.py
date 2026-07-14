@@ -114,9 +114,13 @@ class SwinMatcherLoss(nn.Module):
         re_projection_error = self._compute_re_projection_error(kpts0, kpts1, T_0to1)
 
         # filter matches with high re-projection error (only train approximately correct fine-level matches)
-        loss = re_projection_error[re_projection_error <= 5.0]
+        valid_mask = re_projection_error <= 5.0
+        data['subpixel_valid_match_count'] = valid_mask.sum().detach()
+        loss = re_projection_error[valid_mask]
         if len(loss) == 0:
-            return torch.zeros(1, device=loss.device, requires_grad=False)[0]
+            # Keep a zero connected to the sub-pixel branch. This is important
+            # for distributed training even though this batch has no valid match.
+            return re_projection_error.sum() * 0.0
         return loss.mean()
 
     @torch.no_grad()
@@ -147,16 +151,25 @@ class SwinMatcherLoss(nn.Module):
         loss_scalars.update({"loss_c": loss_c.clone().detach().cpu()})
 
         # 2. fine-level matching loss for windows
+        fine_gt_positive_count = data['conf_matrix_f_gt'].sum()
+        fine_gt_window_count = (data['conf_matrix_f_gt'].sum(dim=(1, 2)) > 0).sum()
         loss_f = self.compute_fine_loss(data)
         loss_f *= self.loss_config['fine_weight']
         loss = loss + loss_f
-        loss_scalars.update({"loss_f": loss_f.clone().detach().cpu()})
+        loss_scalars.update({
+            "loss_f": loss_f.clone().detach().cpu(),
+            "fine_gt_positive_count": fine_gt_positive_count.clone().detach().cpu(),
+            "fine_gt_window_count": fine_gt_window_count.clone().detach().cpu(),
+        })
 
         # 3. sub-pixel refinement loss
         loss_sub = self.compute_sub_pixel_loss(data)
         loss_sub *= self.loss_config['sub_weight']
         loss = loss + loss_sub
-        loss_scalars.update({"loss_sub": loss_sub.clone().detach().cpu()})
+        loss_scalars.update({
+            "loss_sub": loss_sub.clone().detach().cpu(),
+            "subpixel_valid_match_count": data['subpixel_valid_match_count'].clone().detach().cpu(),
+        })
 
         loss_scalars.update({'loss': loss.clone().detach().cpu()})
         data.update({"loss": loss,

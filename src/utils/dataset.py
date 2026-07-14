@@ -36,7 +36,7 @@ except Exception:
 #     return data
 
 
-def imread_gray(path, augment_fn=None, client=SCANNET_CLIENT, to_thermal=False):
+def imread_gray(path, augment_fn=None, client=SCANNET_CLIENT, to_thermal=False, apply_gamma=False):
     # cv_type = cv2.IMREAD_GRAYSCALE if augment_fn is None \
     #             else cv2.IMREAD_COLOR
     # if str(path).startswith('s3://'):
@@ -50,14 +50,15 @@ def imread_gray(path, augment_fn=None, client=SCANNET_CLIENT, to_thermal=False):
     else:
         # image = cv2.imread(path, 0)
         image = cv2.imread(path)
-        choice = random.choices([0, 1, 2], [1 / 3, 2 / 9, 4 / 9])[0]
-        if choice == 0:
-            gamma_value = 1
-        elif choice == 1:
-            gamma_value = random.uniform(0.3, 0.6)
-        else:
-            gamma_value = random.uniform(2, 4)
-        image = adjust_gamma(image, gamma=gamma_value)
+        if apply_gamma:
+            choice = random.choices([0, 1, 2], [1 / 3, 2 / 9, 4 / 9])[0]
+            if choice == 0:
+                gamma_value = 1
+            elif choice == 1:
+                gamma_value = random.uniform(0.3, 0.6)
+            else:
+                gamma_value = random.uniform(2, 4)
+            image = adjust_gamma(image, gamma=gamma_value)
         image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
     # if augment_fn is not None:
@@ -105,7 +106,8 @@ def pad_bottom_right(inp, pad_size, ret_mask=False):
     return padded, mask
 
 
-def read_multi_modality_gray(path, resize=None, df=None, padding=False, augment_fn=None, to_thermal=False):
+def read_multi_modality_gray(path, resize=None, df=None, padding=False, augment_fn=None,
+                             to_thermal=False, apply_gamma=False):
     """
     Args:
         resize (int, optional): the longer edge of resized images. None for no resize.
@@ -117,7 +119,8 @@ def read_multi_modality_gray(path, resize=None, df=None, padding=False, augment_
         scale (torch.tensor): [w/w_new, h/h_new]
     """
     # read image
-    image = imread_gray(path, augment_fn, client=MEGADEPTH_CLIENT, to_thermal=to_thermal)
+    image = imread_gray(path, augment_fn, client=MEGADEPTH_CLIENT,
+                        to_thermal=to_thermal, apply_gamma=apply_gamma)
 
     # resize image
     w, h = image.shape[1], image.shape[0]

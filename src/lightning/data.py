@@ -81,15 +81,7 @@ class MultiSceneDataModule(pl.LightningDataModule):
             logger.warning(str(ae) + " (set world_size = 1 and rank = 0)")
 
         if stage == 'fit':
-            self.train_dataset = MultiModality(self.train_data_root,
-                                               mode='train',
-                                               img_resize=self.mtmd_img_resize,
-                                               df=self.mtmd_df,
-                                               img_padding=self.mtmd_img_pad,
-                                               augment_fn=self.augment_fn,
-                                               manifest_path=self.train_manifest_path,
-                                               pseudo_thermal_prob=self.pseudo_thermal_prob,
-                                               coarse_scale=self.coarse_scale)
+            self.train_dataset = self._build_train_dataset()
             logger.info(f'[rank:{self.rank}] Train Dataset loaded!')
             self.val_dataset = None
             if self.test_manifest_path is not None:
@@ -103,6 +95,21 @@ class MultiSceneDataModule(pl.LightningDataModule):
                                                  pseudo_thermal_prob=0.0,
                                                  coarse_scale=self.coarse_scale)
                 logger.info(f'[rank:{self.rank}] Validation Dataset loaded!')
+
+    def _build_train_dataset(self):
+        return MultiModality(self.train_data_root,
+                             mode='train',
+                             img_resize=self.mtmd_img_resize,
+                             df=self.mtmd_df,
+                             img_padding=self.mtmd_img_pad,
+                             augment_fn=self.augment_fn,
+                             manifest_path=self.train_manifest_path,
+                             pseudo_thermal_prob=self.pseudo_thermal_prob,
+                             coarse_scale=self.coarse_scale)
+
+    def train_dataset_size(self):
+        """Return the post-manifest-filter training sample count without DDP setup."""
+        return len(self._build_train_dataset())
 
     def train_dataloader(self):
         """

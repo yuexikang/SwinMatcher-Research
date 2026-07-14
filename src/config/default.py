@@ -121,6 +121,7 @@ _CN.TRAINER.ADAMW_DECAY = 0.1
 _CN.TRAINER.WARMUP_TYPE = 'linear'  # [linear, constant]
 _CN.TRAINER.WARMUP_RATIO = 0.
 _CN.TRAINER.WARMUP_STEP = 4800
+_CN.TRAINER.WARMUP_EPOCHS = 0
 
 # learning rate scheduler
 _CN.TRAINER.SCHEDULER = 'MultiStepLR'  # [MultiStepLR, CosineAnnealing, ExponentialLR]

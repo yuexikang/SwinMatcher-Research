@@ -87,6 +87,30 @@ def parse_args():
     return parser.parse_args()
 
 
+def configure_warmup_steps(config, args, data_module):
+    """Derive optimizer warm-up steps from the selected training manifest."""
+    warmup_epochs = int(getattr(config.TRAINER, 'WARMUP_EPOCHS', 0))
+    if warmup_epochs <= 0:
+        config.TRAINER.WARMUP_STEP = 0
+        return
+
+    # Avoid DataModule.setup() here: DDP has not initialized its process group
+    # yet, and Trainer.fit() must own rank/sampler setup.
+    num_samples = data_module.train_dataset_size()
+    samples_per_rank = math.ceil(num_samples / config.TRAINER.WORLD_SIZE)
+    batches_per_epoch = math.ceil(samples_per_rank / args.batch_size)
+    accumulate = getattr(args, 'accumulate_grad_batches', 1)
+    if not isinstance(accumulate, int) or accumulate < 1:
+        accumulate = 1
+    optimizer_steps_per_epoch = math.ceil(batches_per_epoch / accumulate)
+    config.TRAINER.WARMUP_STEP = warmup_epochs * optimizer_steps_per_epoch
+    loguru_logger.info(
+        "Configured warm-up: {} epochs x {} optimizer steps/epoch = {} steps "
+        "(samples={}, world_size={}, batch_size={}, accumulate={}).",
+        warmup_epochs, optimizer_steps_per_epoch, config.TRAINER.WARMUP_STEP,
+        num_samples, config.TRAINER.WORLD_SIZE, args.batch_size, accumulate)
+
+
 def main():
     # parse arguments
     args = parse_args()
@@ -122,6 +146,7 @@ def main():
 
     # lightning data
     data_module = MultiSceneDataModule(args, config)
+    configure_warmup_steps(config, args, data_module)
     loguru_logger.info(f"SwinMatcher DataModule initialized!")
 
     # Loggers
@@ -147,6 +172,8 @@ def main():
             "world_size": config.TRAINER.WORLD_SIZE,
             "true_batch_size": config.TRAINER.TRUE_BATCH_SIZE,
             "true_lr": config.TRAINER.TRUE_LR,
+            "warmup_epochs": config.TRAINER.WARMUP_EPOCHS,
+            "warmup_steps": config.TRAINER.WARMUP_STEP,
             "train_manifest_path": config.DATASET.TRAIN_MANIFEST_PATH,
             "pseudo_thermal_prob": config.DATASET.PSEUDO_THERMAL_PROB,
         }

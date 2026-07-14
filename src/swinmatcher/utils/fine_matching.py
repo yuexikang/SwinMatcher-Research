@@ -63,7 +63,6 @@ class FineMatching(nn.Module):
         data.update(**self.get_fine_match(conf_matrix_fine, feat_f0_unfold, feat_f1_unfold,
                                           feat_f0_whole, feat_f1_whole, data))
 
-    @torch.no_grad()
     def get_fine_match(self, conf_matrix_fine, feat_f0_unfold, feat_f1_unfold, feat_f0_whole, feat_f1_whole, data):
         """
         Args:
@@ -82,25 +81,29 @@ class FineMatching(nn.Module):
         """
         W_f = self.W_f
 
-        # 1. confidence thresholding
-        mask = conf_matrix_fine > self.fine_thr
+        # Discrete match selection has no useful gradient. Keep it detached, but
+        # leave the following feature sampling and sub-pixel regressor tracked.
+        with torch.no_grad():
+            selection_conf = conf_matrix_fine.detach()
+            mask = selection_conf > self.fine_thr
 
-        fallback_used = mask.sum() == 0
-        if fallback_used:
-            mask[0, 0, 0] = 1
-            conf_matrix_fine[0, 0, 0] = 1
-        data['fine_fallback_used'] = torch.as_tensor(
-            fallback_used, device=conf_matrix_fine.device, dtype=torch.bool)
+            fallback_used = not bool(mask.any())
+            if fallback_used:
+                # Use a detached selection mask only. Mutating conf_matrix_fine
+                # here would corrupt the fine loss and its autograd graph.
+                mask = torch.zeros_like(mask)
+                mask.reshape(-1)[selection_conf.reshape(-1).argmax()] = True
+            data['fine_fallback_used'] = torch.as_tensor(
+                fallback_used, device=conf_matrix_fine.device, dtype=torch.bool)
 
-        # match only the highest confidence
-        mask = mask * (conf_matrix_fine == conf_matrix_fine.amax(dim=[1, 2], keepdim=True))
+            # Match only the highest-confidence entry in each fine window.
+            mask = mask * (selection_conf == selection_conf.amax(dim=[1, 2], keepdim=True))
 
-        # 3. find all valid fine matches
-        # this only works when at most one `True` in each row
-        mask_v, all_j_ids = mask.max(dim=2)
-        b_ids, i_ids = torch.where(mask_v)
-        j_ids = all_j_ids[b_ids, i_ids]
-        mconf = conf_matrix_fine[b_ids, i_ids, j_ids]
+            # This works because every fine-window row contains at most one True.
+            mask_v, all_j_ids = mask.max(dim=2)
+            b_ids, i_ids = torch.where(mask_v)
+            j_ids = all_j_ids[b_ids, i_ids]
+            mconf = selection_conf[b_ids, i_ids, j_ids]
 
         # 4. update with matches in original image resolution
 
