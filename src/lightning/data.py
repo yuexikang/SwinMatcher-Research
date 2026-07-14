@@ -47,6 +47,7 @@ class MultiSceneDataModule(pl.LightningDataModule):
         self.mtmd_img_resize = config.DATASET.MGDPT_IMG_RESIZE  # 840
         self.mtmd_img_pad = config.DATASET.MGDPT_IMG_PAD  # True
         self.mtmd_df = config.DATASET.MGDPT_DF  # 8
+        self.apply_gamma = config.DATASET.APPLY_GAMMA
         self.pseudo_thermal_prob = config.DATASET.PSEUDO_THERMAL_PROB
         self.coarse_scale = 1 / config.SWINMATCHER.RESOLUTION[0]  # 0.125. for training swinmatcher.
 
@@ -104,6 +105,7 @@ class MultiSceneDataModule(pl.LightningDataModule):
                              img_padding=self.mtmd_img_pad,
                              augment_fn=self.augment_fn,
                              manifest_path=self.train_manifest_path,
+                             apply_gamma=self.apply_gamma,
                              pseudo_thermal_prob=self.pseudo_thermal_prob,
                              coarse_scale=self.coarse_scale)
 

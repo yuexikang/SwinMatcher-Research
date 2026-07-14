@@ -56,6 +56,7 @@ class MultiModality(Dataset):
         self.img_resize = img_resize
         self.df = df
         self.img_padding = img_padding
+        self.apply_gamma = kwargs.get('apply_gamma', True)
         self.pseudo_thermal_prob = kwargs.get('pseudo_thermal_prob', 0.0)
 
         # for training LoFTR
@@ -152,7 +153,7 @@ class MultiModality(Dataset):
         # TODO: Support augmentation & handle seeds for each worker correctly.
         # ----- pretrain -----
         thermal_option0, thermal_option1 = False, False
-        apply_gamma = self.mode == 'train'
+        apply_gamma = self.mode == 'train' and self.apply_gamma
         # ----- pseudo cross-modal enhancement -----
         if self.mode == 'train' and self.pseudo_thermal_prob > 0 and random.random() < self.pseudo_thermal_prob:
             if random.choice([0, 1]) == 0:
