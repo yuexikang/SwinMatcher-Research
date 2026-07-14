@@ -1,0 +1,252 @@
+{
+  "SwinMatcherBIT_all": {
+    "by_modality": {
+      "optical-depth": 100,
+      "optical-infrared": 352,
+      "optical-lidar": 5146,
+      "optical-map": 1236,
+      "optical-optical": 5784,
+      "optical-other": 1120,
+      "optical-sar": 9298,
+      "optical_day-optical_night": 268,
+      "sar-lidar": 180
+    },
+    "by_pair_type": {
+      "multimodal": 17700,
+      "optical_optical": 5784
+    },
+    "by_split": {
+      "test": 1000,
+      "train": 22484
+    },
+    "by_subset": {
+      "1 optical-optical": 100,
+      "2 optical-infrared": 100,
+      "3 optical-sar": 100,
+      "4 optical-depth": 100,
+      "5 optical-map": 100,
+      "6 day-night": 100,
+      "scene01_rgb_lidar": 952,
+      "scene01_rgb_other": 1120,
+      "scene01_rgb_sar": 1036,
+      "scene02_rgb1_rgb2": 1736,
+      "scene02_rgb1_sar1": 1176,
+      "scene02_rgb1_sar2": 1400,
+      "scene03_rgb1_sar": 28,
+      "scene03_rgb2_rgb1": 280,
+      "scene04_rgb1_map": 56,
+      "scene04_rgb1_sar": 868,
+      "scene04_rgb2_rgb1": 1568,
+      "scene05_rgb1_map": 560,
+      "scene05_rgb1_rgb2": 560,
+      "scene05_rgb3_rgb2": 588,
+      "scene06_rgb_sar": 1260,
+      "scene07_rgb_lidar": 1568,
+      "scene07_rgb_sar": 1652,
+      "scene08_rgb_lidar": 2576,
+      "scene08_rgb_sar": 1708,
+      "scene09_rgb_ir": 252,
+      "scene10_rgb1_rgb2": 952,
+      "scene11_day_night": 168,
+      "scene11_rgb1_map1": 140,
+      "scene11_rgb2_map2": 280,
+      "scene1_SAR-LiDAR": 90,
+      "scene2_SAR-LiDAR": 90,
+      "scene3_Optical-LiDAR": 50,
+      "scene3_Optical-SAR": 70,
+      "scene4_Optical-Map": 100
+    },
+    "by_variant": {
+      "h180": 15257,
+      "h30": 7227,
+      "paper_test": 1000
+    },
+    "records": 23484,
+    "skipped_without_gt": 0
+  },
+  "SwinMatcherBIT_h180": {
+    "by_modality": {
+      "optical-infrared": 171,
+      "optical-lidar": 3458,
+      "optical-map": 703,
+      "optical-optical": 3857,
+      "optical-other": 760,
+      "optical-sar": 6194,
+      "optical_day-optical_night": 114
+    },
+    "by_pair_type": {
+      "multimodal": 11400,
+      "optical_optical": 3857
+    },
+    "by_split": {
+      "train": 15257
+    },
+    "by_subset": {
+      "scene01_rgb_lidar": 646,
+      "scene01_rgb_other": 760,
+      "scene01_rgb_sar": 703,
+      "scene02_rgb1_rgb2": 1178,
+      "scene02_rgb1_sar1": 798,
+      "scene02_rgb1_sar2": 950,
+      "scene03_rgb1_sar": 19,
+      "scene03_rgb2_rgb1": 190,
+      "scene04_rgb1_map": 38,
+      "scene04_rgb1_sar": 589,
+      "scene04_rgb2_rgb1": 1064,
+      "scene05_rgb1_map": 380,
+      "scene05_rgb1_rgb2": 380,
+      "scene05_rgb3_rgb2": 399,
+      "scene06_rgb_sar": 855,
+      "scene07_rgb_lidar": 1064,
+      "scene07_rgb_sar": 1121,
+      "scene08_rgb_lidar": 1748,
+      "scene08_rgb_sar": 1159,
+      "scene09_rgb_ir": 171,
+      "scene10_rgb1_rgb2": 646,
+      "scene11_day_night": 114,
+      "scene11_rgb1_map1": 95,
+      "scene11_rgb2_map2": 190
+    },
+    "by_variant": {
+      "h180": 15257
+    },
+    "records": 15257,
+    "skipped_without_gt": 0
+  },
+  "SwinMatcherBIT_h30": {
+    "by_modality": {
+      "optical-infrared": 81,
+      "optical-lidar": 1638,
+      "optical-map": 333,
+      "optical-optical": 1827,
+      "optical-other": 360,
+      "optical-sar": 2934,
+      "optical_day-optical_night": 54
+    },
+    "by_pair_type": {
+      "multimodal": 5400,
+      "optical_optical": 1827
+    },
+    "by_split": {
+      "train": 7227
+    },
+    "by_subset": {
+      "scene01_rgb_lidar": 306,
+      "scene01_rgb_other": 360,
+      "scene01_rgb_sar": 333,
+      "scene02_rgb1_rgb2": 558,
+      "scene02_rgb1_sar1": 378,
+      "scene02_rgb1_sar2": 450,
+      "scene03_rgb1_sar": 9,
+      "scene03_rgb2_rgb1": 90,
+      "scene04_rgb1_map": 18,
+      "scene04_rgb1_sar": 279,
+      "scene04_rgb2_rgb1": 504,
+      "scene05_rgb1_map": 180,
+      "scene05_rgb1_rgb2": 180,
+      "scene05_rgb3_rgb2": 189,
+      "scene06_rgb_sar": 405,
+      "scene07_rgb_lidar": 504,
+      "scene07_rgb_sar": 531,
+      "scene08_rgb_lidar": 828,
+      "scene08_rgb_sar": 549,
+      "scene09_rgb_ir": 81,
+      "scene10_rgb1_rgb2": 306,
+      "scene11_day_night": 54,
+      "scene11_rgb1_map1": 45,
+      "scene11_rgb2_map2": 90
+    },
+    "by_variant": {
+      "h30": 7227
+    },
+    "records": 7227,
+    "skipped_without_gt": 0
+  },
+  "SwinMatcherBIT_paper_test": {
+    "by_modality": {
+      "optical-depth": 100,
+      "optical-infrared": 100,
+      "optical-lidar": 50,
+      "optical-map": 200,
+      "optical-optical": 100,
+      "optical-sar": 170,
+      "optical_day-optical_night": 100,
+      "sar-lidar": 180
+    },
+    "by_pair_type": {
+      "multimodal": 900,
+      "optical_optical": 100
+    },
+    "by_split": {
+      "test": 1000
+    },
+    "by_subset": {
+      "1 optical-optical": 100,
+      "2 optical-infrared": 100,
+      "3 optical-sar": 100,
+      "4 optical-depth": 100,
+      "5 optical-map": 100,
+      "6 day-night": 100,
+      "scene1_SAR-LiDAR": 90,
+      "scene2_SAR-LiDAR": 90,
+      "scene3_Optical-LiDAR": 50,
+      "scene3_Optical-SAR": 70,
+      "scene4_Optical-Map": 100
+    },
+    "by_variant": {
+      "paper_test": 1000
+    },
+    "records": 1000,
+    "skipped_without_gt": 0
+  },
+  "SwinMatcherBIT_train": {
+    "by_modality": {
+      "optical-infrared": 252,
+      "optical-lidar": 5096,
+      "optical-map": 1036,
+      "optical-optical": 5684,
+      "optical-other": 1120,
+      "optical-sar": 9128,
+      "optical_day-optical_night": 168
+    },
+    "by_pair_type": {
+      "multimodal": 16800,
+      "optical_optical": 5684
+    },
+    "by_split": {
+      "train": 22484
+    },
+    "by_subset": {
+      "scene01_rgb_lidar": 952,
+      "scene01_rgb_other": 1120,
+      "scene01_rgb_sar": 1036,
+      "scene02_rgb1_rgb2": 1736,
+      "scene02_rgb1_sar1": 1176,
+      "scene02_rgb1_sar2": 1400,
+      "scene03_rgb1_sar": 28,
+      "scene03_rgb2_rgb1": 280,
+      "scene04_rgb1_map": 56,
+      "scene04_rgb1_sar": 868,
+      "scene04_rgb2_rgb1": 1568,
+      "scene05_rgb1_map": 560,
+      "scene05_rgb1_rgb2": 560,
+      "scene05_rgb3_rgb2": 588,
+      "scene06_rgb_sar": 1260,
+      "scene07_rgb_lidar": 1568,
+      "scene07_rgb_sar": 1652,
+      "scene08_rgb_lidar": 2576,
+      "scene08_rgb_sar": 1708,
+      "scene09_rgb_ir": 252,
+      "scene10_rgb1_rgb2": 952,
+      "scene11_day_night": 168,
+      "scene11_rgb1_map1": 140,
+      "scene11_rgb2_map2": 280
+    },
+    "by_variant": {
+      "h180": 15257,
+      "h30": 7227
+    },
+    "records": 22484,
+    "skipped_without_gt": 0
+  }
+}

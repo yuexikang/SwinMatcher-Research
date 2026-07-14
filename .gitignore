@@ -3,6 +3,14 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+
+
+####
+*.ckpt
+outputs/training/wandb/
+outputs_demo/
+###
+
 # C extensions
 *.so
 

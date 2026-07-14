@@ -1,0 +1,171 @@
+scene,scene_pair,modality_pair,folder,id,image0,image1,matrix,matches,NCM,Pre,SR,RMSE,runtime_ms
+expanded_MRSI_dataset,3 optical-sar,optical-sar,000,swinmatcherbit/paper_test/expanded_MRSI_dataset/3_optical-sar/000/01,00.PNG,01.PNG,01.npy,0,0,0.0,0,10.0,90.59201501077041
+expanded_MRSI_dataset,3 optical-sar,optical-sar,000,swinmatcherbit/paper_test/expanded_MRSI_dataset/3_optical-sar/000/02,00.PNG,02.PNG,02.npy,0,0,0.0,0,10.0,35.84689600393176
+expanded_MRSI_dataset,3 optical-sar,optical-sar,000,swinmatcherbit/paper_test/expanded_MRSI_dataset/3_optical-sar/000/03,00.PNG,03.PNG,03.npy,0,0,0.0,0,10.0,36.091555026359856
+expanded_MRSI_dataset,3 optical-sar,optical-sar,000,swinmatcherbit/paper_test/expanded_MRSI_dataset/3_optical-sar/000/04,00.PNG,04.PNG,04.npy,0,0,0.0,0,10.0,44.28747796919197
+expanded_MRSI_dataset,3 optical-sar,optical-sar,000,swinmatcherbit/paper_test/expanded_MRSI_dataset/3_optical-sar/000/05,00.PNG,05.PNG,05.npy,0,0,0.0,0,10.0,353.08574698865414
+expanded_MRSI_dataset,3 optical-sar,optical-sar,000,swinmatcherbit/paper_test/expanded_MRSI_dataset/3_optical-sar/000/06,00.PNG,06.PNG,06.npy,0,0,0.0,0,10.0,89.68637499492615
+expanded_MRSI_dataset,3 optical-sar,optical-sar,000,swinmatcherbit/paper_test/expanded_MRSI_dataset/3_optical-sar/000/07,00.PNG,07.PNG,07.npy,0,0,0.0,0,10.0,90.35922802286223
+expanded_MRSI_dataset,3 optical-sar,optical-sar,000,swinmatcherbit/paper_test/expanded_MRSI_dataset/3_optical-sar/000/08,00.PNG,08.PNG,08.npy,0,0,0.0,0,10.0,312.2784649604
+expanded_MRSI_dataset,3 optical-sar,optical-sar,000,swinmatcherbit/paper_test/expanded_MRSI_dataset/3_optical-sar/000/09,00.PNG,09.PNG,09.npy,0,0,0.0,0,10.0,237.44967498350888
+expanded_MRSI_dataset,3 optical-sar,optical-sar,000,swinmatcherbit/paper_test/expanded_MRSI_dataset/3_optical-sar/000/10,00.PNG,10.PNG,10.npy,0,0,0.0,0,10.0,146.65875601349398
+expanded_MRSI_dataset,3 optical-sar,optical-sar,001,swinmatcherbit/paper_test/expanded_MRSI_dataset/3_optical-sar/001/01,00.PNG,01.PNG,01.npy,0,0,0.0,0,10.0,37.33905800618231
+expanded_MRSI_dataset,3 optical-sar,optical-sar,001,swinmatcherbit/paper_test/expanded_MRSI_dataset/3_optical-sar/001/02,00.PNG,02.PNG,02.npy,0,0,0.0,0,10.0,35.77893797773868
+expanded_MRSI_dataset,3 optical-sar,optical-sar,001,swinmatcherbit/paper_test/expanded_MRSI_dataset/3_optical-sar/001/03,00.PNG,03.PNG,03.npy,0,0,0.0,0,10.0,85.64822998596355
+expanded_MRSI_dataset,3 optical-sar,optical-sar,001,swinmatcherbit/paper_test/expanded_MRSI_dataset/3_optical-sar/001/04,00.PNG,04.PNG,04.npy,0,0,0.0,0,10.0,161.58016200643033
+expanded_MRSI_dataset,3 optical-sar,optical-sar,001,swinmatcherbit/paper_test/expanded_MRSI_dataset/3_optical-sar/001/05,00.PNG,05.PNG,05.npy,0,0,0.0,0,10.0,35.86163296131417
+expanded_MRSI_dataset,3 optical-sar,optical-sar,001,swinmatcherbit/paper_test/expanded_MRSI_dataset/3_optical-sar/001/06,00.PNG,06.PNG,06.npy,0,0,0.0,0,10.0,35.70273402146995
+expanded_MRSI_dataset,3 optical-sar,optical-sar,001,swinmatcherbit/paper_test/expanded_MRSI_dataset/3_optical-sar/001/07,00.PNG,07.PNG,07.npy,0,0,0.0,0,10.0,37.08572301547974
+expanded_MRSI_dataset,3 optical-sar,optical-sar,001,swinmatcherbit/paper_test/expanded_MRSI_dataset/3_optical-sar/001/08,00.PNG,08.PNG,08.npy,0,0,0.0,0,10.0,90.70113999769092
+expanded_MRSI_dataset,3 optical-sar,optical-sar,001,swinmatcherbit/paper_test/expanded_MRSI_dataset/3_optical-sar/001/09,00.PNG,09.PNG,09.npy,0,0,0.0,0,10.0,36.3250239752233
+expanded_MRSI_dataset,3 optical-sar,optical-sar,001,swinmatcherbit/paper_test/expanded_MRSI_dataset/3_optical-sar/001/10,00.PNG,10.PNG,10.npy,0,0,0.0,0,10.0,35.950218967627734
+expanded_MRSI_dataset,3 optical-sar,optical-sar,002,swinmatcherbit/paper_test/expanded_MRSI_dataset/3_optical-sar/002/01,00.PNG,01.PNG,01.npy,0,0,0.0,0,10.0,71.96539099095389
+expanded_MRSI_dataset,3 optical-sar,optical-sar,002,swinmatcherbit/paper_test/expanded_MRSI_dataset/3_optical-sar/002/02,00.PNG,02.PNG,02.npy,0,0,0.0,0,10.0,35.87842499837279
+expanded_MRSI_dataset,3 optical-sar,optical-sar,002,swinmatcherbit/paper_test/expanded_MRSI_dataset/3_optical-sar/002/03,00.PNG,03.PNG,03.npy,0,0,0.0,0,10.0,36.137100018095225
+expanded_MRSI_dataset,3 optical-sar,optical-sar,002,swinmatcherbit/paper_test/expanded_MRSI_dataset/3_optical-sar/002/04,00.PNG,04.PNG,04.npy,0,0,0.0,0,10.0,36.76456998800859
+expanded_MRSI_dataset,3 optical-sar,optical-sar,002,swinmatcherbit/paper_test/expanded_MRSI_dataset/3_optical-sar/002/05,00.PNG,05.PNG,05.npy,0,0,0.0,0,10.0,74.94408602360636
+expanded_MRSI_dataset,3 optical-sar,optical-sar,002,swinmatcherbit/paper_test/expanded_MRSI_dataset/3_optical-sar/002/06,00.PNG,06.PNG,06.npy,0,0,0.0,0,10.0,47.518988023512065
+expanded_MRSI_dataset,3 optical-sar,optical-sar,002,swinmatcherbit/paper_test/expanded_MRSI_dataset/3_optical-sar/002/07,00.PNG,07.PNG,07.npy,0,0,0.0,0,10.0,43.762762972619385
+expanded_MRSI_dataset,3 optical-sar,optical-sar,002,swinmatcherbit/paper_test/expanded_MRSI_dataset/3_optical-sar/002/08,00.PNG,08.PNG,08.npy,0,0,0.0,0,10.0,36.756513989530504
+expanded_MRSI_dataset,3 optical-sar,optical-sar,002,swinmatcherbit/paper_test/expanded_MRSI_dataset/3_optical-sar/002/09,00.PNG,09.PNG,09.npy,0,0,0.0,0,10.0,36.88468399923295
+expanded_MRSI_dataset,3 optical-sar,optical-sar,002,swinmatcherbit/paper_test/expanded_MRSI_dataset/3_optical-sar/002/10,00.PNG,10.PNG,10.npy,0,0,0.0,0,10.0,36.87829297268763
+expanded_MRSI_dataset,3 optical-sar,optical-sar,003,swinmatcherbit/paper_test/expanded_MRSI_dataset/3_optical-sar/003/01,00.PNG,01.PNG,01.npy,0,0,0.0,0,10.0,36.04785300558433
+expanded_MRSI_dataset,3 optical-sar,optical-sar,003,swinmatcherbit/paper_test/expanded_MRSI_dataset/3_optical-sar/003/02,00.PNG,02.PNG,02.npy,0,0,0.0,0,10.0,37.25412901258096
+expanded_MRSI_dataset,3 optical-sar,optical-sar,003,swinmatcherbit/paper_test/expanded_MRSI_dataset/3_optical-sar/003/03,00.PNG,03.PNG,03.npy,0,0,0.0,0,10.0,35.98576603690162
+expanded_MRSI_dataset,3 optical-sar,optical-sar,003,swinmatcherbit/paper_test/expanded_MRSI_dataset/3_optical-sar/003/04,00.PNG,04.PNG,04.npy,0,0,0.0,0,10.0,36.07449302216992
+expanded_MRSI_dataset,3 optical-sar,optical-sar,003,swinmatcherbit/paper_test/expanded_MRSI_dataset/3_optical-sar/003/05,00.PNG,05.PNG,05.npy,0,0,0.0,0,10.0,145.9725580061786
+expanded_MRSI_dataset,3 optical-sar,optical-sar,003,swinmatcherbit/paper_test/expanded_MRSI_dataset/3_optical-sar/003/06,00.PNG,06.PNG,06.npy,0,0,0.0,0,10.0,36.69358597835526
+expanded_MRSI_dataset,3 optical-sar,optical-sar,003,swinmatcherbit/paper_test/expanded_MRSI_dataset/3_optical-sar/003/07,00.PNG,07.PNG,07.npy,0,0,0.0,0,10.0,36.691350978799164
+expanded_MRSI_dataset,3 optical-sar,optical-sar,003,swinmatcherbit/paper_test/expanded_MRSI_dataset/3_optical-sar/003/08,00.PNG,08.PNG,08.npy,0,0,0.0,0,10.0,84.69629200408235
+expanded_MRSI_dataset,3 optical-sar,optical-sar,003,swinmatcherbit/paper_test/expanded_MRSI_dataset/3_optical-sar/003/09,00.PNG,09.PNG,09.npy,0,0,0.0,0,10.0,77.38653296837583
+expanded_MRSI_dataset,3 optical-sar,optical-sar,003,swinmatcherbit/paper_test/expanded_MRSI_dataset/3_optical-sar/003/10,00.PNG,10.PNG,10.npy,0,0,0.0,0,10.0,36.75648401258513
+expanded_MRSI_dataset,3 optical-sar,optical-sar,004,swinmatcherbit/paper_test/expanded_MRSI_dataset/3_optical-sar/004/01,00.PNG,01.PNG,01.npy,0,0,0.0,0,10.0,36.67420003330335
+expanded_MRSI_dataset,3 optical-sar,optical-sar,004,swinmatcherbit/paper_test/expanded_MRSI_dataset/3_optical-sar/004/02,00.PNG,02.PNG,02.npy,0,0,0.0,0,10.0,36.035579978488386
+expanded_MRSI_dataset,3 optical-sar,optical-sar,004,swinmatcherbit/paper_test/expanded_MRSI_dataset/3_optical-sar/004/03,00.PNG,03.PNG,03.npy,0,0,0.0,0,10.0,35.922718001529574
+expanded_MRSI_dataset,3 optical-sar,optical-sar,004,swinmatcherbit/paper_test/expanded_MRSI_dataset/3_optical-sar/004/04,00.PNG,04.PNG,04.npy,0,0,0.0,0,10.0,36.28012997796759
+expanded_MRSI_dataset,3 optical-sar,optical-sar,004,swinmatcherbit/paper_test/expanded_MRSI_dataset/3_optical-sar/004/05,00.PNG,05.PNG,05.npy,0,0,0.0,0,10.0,93.68201799225062
+expanded_MRSI_dataset,3 optical-sar,optical-sar,004,swinmatcherbit/paper_test/expanded_MRSI_dataset/3_optical-sar/004/06,00.PNG,06.PNG,06.npy,0,0,0.0,0,10.0,44.279342982918024
+expanded_MRSI_dataset,3 optical-sar,optical-sar,004,swinmatcherbit/paper_test/expanded_MRSI_dataset/3_optical-sar/004/07,00.PNG,07.PNG,07.npy,0,0,0.0,0,10.0,237.5584879773669
+expanded_MRSI_dataset,3 optical-sar,optical-sar,004,swinmatcherbit/paper_test/expanded_MRSI_dataset/3_optical-sar/004/08,00.PNG,08.PNG,08.npy,0,0,0.0,0,10.0,84.70504800789058
+expanded_MRSI_dataset,3 optical-sar,optical-sar,004,swinmatcherbit/paper_test/expanded_MRSI_dataset/3_optical-sar/004/09,00.PNG,09.PNG,09.npy,0,0,0.0,0,10.0,83.77477101748809
+expanded_MRSI_dataset,3 optical-sar,optical-sar,004,swinmatcherbit/paper_test/expanded_MRSI_dataset/3_optical-sar/004/10,00.PNG,10.PNG,10.npy,0,0,0.0,0,10.0,79.89173801615834
+expanded_MRSI_dataset,3 optical-sar,optical-sar,005,swinmatcherbit/paper_test/expanded_MRSI_dataset/3_optical-sar/005/01,00.PNG,01.PNG,01.npy,0,0,0.0,0,10.0,321.0104330210015
+expanded_MRSI_dataset,3 optical-sar,optical-sar,005,swinmatcherbit/paper_test/expanded_MRSI_dataset/3_optical-sar/005/02,00.PNG,02.PNG,02.npy,0,0,0.0,0,10.0,79.19987803325057
+expanded_MRSI_dataset,3 optical-sar,optical-sar,005,swinmatcherbit/paper_test/expanded_MRSI_dataset/3_optical-sar/005/03,00.PNG,03.PNG,03.npy,0,0,0.0,0,10.0,168.59898198163137
+expanded_MRSI_dataset,3 optical-sar,optical-sar,005,swinmatcherbit/paper_test/expanded_MRSI_dataset/3_optical-sar/005/04,00.PNG,04.PNG,04.npy,0,0,0.0,0,10.0,81.97698398726061
+expanded_MRSI_dataset,3 optical-sar,optical-sar,005,swinmatcherbit/paper_test/expanded_MRSI_dataset/3_optical-sar/005/05,00.PNG,05.PNG,05.npy,0,0,0.0,0,10.0,36.879494960885495
+expanded_MRSI_dataset,3 optical-sar,optical-sar,005,swinmatcherbit/paper_test/expanded_MRSI_dataset/3_optical-sar/005/06,00.PNG,06.PNG,06.npy,0,0,0.0,0,10.0,90.31828999286518
+expanded_MRSI_dataset,3 optical-sar,optical-sar,005,swinmatcherbit/paper_test/expanded_MRSI_dataset/3_optical-sar/005/07,00.PNG,07.PNG,07.npy,0,0,0.0,0,10.0,61.64144194917753
+expanded_MRSI_dataset,3 optical-sar,optical-sar,005,swinmatcherbit/paper_test/expanded_MRSI_dataset/3_optical-sar/005/08,00.PNG,08.PNG,08.npy,0,0,0.0,0,10.0,93.01134903216735
+expanded_MRSI_dataset,3 optical-sar,optical-sar,005,swinmatcherbit/paper_test/expanded_MRSI_dataset/3_optical-sar/005/09,00.PNG,09.PNG,09.npy,0,0,0.0,0,10.0,36.12575901206583
+expanded_MRSI_dataset,3 optical-sar,optical-sar,005,swinmatcherbit/paper_test/expanded_MRSI_dataset/3_optical-sar/005/10,00.PNG,10.PNG,10.npy,0,0,0.0,0,10.0,83.2941479748115
+expanded_MRSI_dataset,3 optical-sar,optical-sar,006,swinmatcherbit/paper_test/expanded_MRSI_dataset/3_optical-sar/006/01,00.PNG,01.PNG,01.npy,0,0,0.0,0,10.0,170.67376896739006
+expanded_MRSI_dataset,3 optical-sar,optical-sar,006,swinmatcherbit/paper_test/expanded_MRSI_dataset/3_optical-sar/006/02,00.PNG,02.PNG,02.npy,0,0,0.0,0,10.0,248.02685901522636
+expanded_MRSI_dataset,3 optical-sar,optical-sar,006,swinmatcherbit/paper_test/expanded_MRSI_dataset/3_optical-sar/006/03,00.PNG,03.PNG,03.npy,0,0,0.0,0,10.0,36.32380103226751
+expanded_MRSI_dataset,3 optical-sar,optical-sar,006,swinmatcherbit/paper_test/expanded_MRSI_dataset/3_optical-sar/006/04,00.PNG,04.PNG,04.npy,0,0,0.0,0,10.0,36.23199899448082
+expanded_MRSI_dataset,3 optical-sar,optical-sar,006,swinmatcherbit/paper_test/expanded_MRSI_dataset/3_optical-sar/006/05,00.PNG,05.PNG,05.npy,0,0,0.0,0,10.0,36.359869001898915
+expanded_MRSI_dataset,3 optical-sar,optical-sar,006,swinmatcherbit/paper_test/expanded_MRSI_dataset/3_optical-sar/006/06,00.PNG,06.PNG,06.npy,0,0,0.0,0,10.0,118.01079101860523
+expanded_MRSI_dataset,3 optical-sar,optical-sar,006,swinmatcherbit/paper_test/expanded_MRSI_dataset/3_optical-sar/006/07,00.PNG,07.PNG,07.npy,0,0,0.0,0,10.0,82.21711497753859
+expanded_MRSI_dataset,3 optical-sar,optical-sar,006,swinmatcherbit/paper_test/expanded_MRSI_dataset/3_optical-sar/006/08,00.PNG,08.PNG,08.npy,0,0,0.0,0,10.0,36.02593200048432
+expanded_MRSI_dataset,3 optical-sar,optical-sar,006,swinmatcherbit/paper_test/expanded_MRSI_dataset/3_optical-sar/006/09,00.PNG,09.PNG,09.npy,0,0,0.0,0,10.0,36.258367996197194
+expanded_MRSI_dataset,3 optical-sar,optical-sar,006,swinmatcherbit/paper_test/expanded_MRSI_dataset/3_optical-sar/006/10,00.PNG,10.PNG,10.npy,0,0,0.0,0,10.0,36.17892903275788
+expanded_MRSI_dataset,3 optical-sar,optical-sar,007,swinmatcherbit/paper_test/expanded_MRSI_dataset/3_optical-sar/007/01,00.PNG,01.PNG,01.npy,0,0,0.0,0,10.0,90.08287801407278
+expanded_MRSI_dataset,3 optical-sar,optical-sar,007,swinmatcherbit/paper_test/expanded_MRSI_dataset/3_optical-sar/007/02,00.PNG,02.PNG,02.npy,0,0,0.0,0,10.0,36.46427596686408
+expanded_MRSI_dataset,3 optical-sar,optical-sar,007,swinmatcherbit/paper_test/expanded_MRSI_dataset/3_optical-sar/007/03,00.PNG,03.PNG,03.npy,0,0,0.0,0,10.0,326.7890049610287
+expanded_MRSI_dataset,3 optical-sar,optical-sar,007,swinmatcherbit/paper_test/expanded_MRSI_dataset/3_optical-sar/007/04,00.PNG,04.PNG,04.npy,0,0,0.0,0,10.0,89.97447503497824
+expanded_MRSI_dataset,3 optical-sar,optical-sar,007,swinmatcherbit/paper_test/expanded_MRSI_dataset/3_optical-sar/007/05,00.PNG,05.PNG,05.npy,0,0,0.0,0,10.0,44.97587098740041
+expanded_MRSI_dataset,3 optical-sar,optical-sar,007,swinmatcherbit/paper_test/expanded_MRSI_dataset/3_optical-sar/007/06,00.PNG,06.PNG,06.npy,0,0,0.0,0,10.0,175.1171740470454
+expanded_MRSI_dataset,3 optical-sar,optical-sar,007,swinmatcherbit/paper_test/expanded_MRSI_dataset/3_optical-sar/007/07,00.PNG,07.PNG,07.npy,0,0,0.0,0,10.0,36.204997973982245
+expanded_MRSI_dataset,3 optical-sar,optical-sar,007,swinmatcherbit/paper_test/expanded_MRSI_dataset/3_optical-sar/007/08,00.PNG,08.PNG,08.npy,0,0,0.0,0,10.0,90.09301697369665
+expanded_MRSI_dataset,3 optical-sar,optical-sar,007,swinmatcherbit/paper_test/expanded_MRSI_dataset/3_optical-sar/007/09,00.PNG,09.PNG,09.npy,0,0,0.0,0,10.0,79.7290219925344
+expanded_MRSI_dataset,3 optical-sar,optical-sar,007,swinmatcherbit/paper_test/expanded_MRSI_dataset/3_optical-sar/007/10,00.PNG,10.PNG,10.npy,0,0,0.0,0,10.0,50.25774100795388
+expanded_MRSI_dataset,3 optical-sar,optical-sar,008,swinmatcherbit/paper_test/expanded_MRSI_dataset/3_optical-sar/008/01,00.PNG,01.PNG,01.npy,0,0,0.0,0,10.0,87.39035198232159
+expanded_MRSI_dataset,3 optical-sar,optical-sar,008,swinmatcherbit/paper_test/expanded_MRSI_dataset/3_optical-sar/008/02,00.PNG,02.PNG,02.npy,0,0,0.0,0,10.0,318.9903780003078
+expanded_MRSI_dataset,3 optical-sar,optical-sar,008,swinmatcherbit/paper_test/expanded_MRSI_dataset/3_optical-sar/008/03,00.PNG,03.PNG,03.npy,0,0,0.0,0,10.0,90.33148502930999
+expanded_MRSI_dataset,3 optical-sar,optical-sar,008,swinmatcherbit/paper_test/expanded_MRSI_dataset/3_optical-sar/008/04,00.PNG,04.PNG,04.npy,0,0,0.0,0,10.0,79.64065601117909
+expanded_MRSI_dataset,3 optical-sar,optical-sar,008,swinmatcherbit/paper_test/expanded_MRSI_dataset/3_optical-sar/008/05,00.PNG,05.PNG,05.npy,0,0,0.0,0,10.0,366.4717549690977
+expanded_MRSI_dataset,3 optical-sar,optical-sar,008,swinmatcherbit/paper_test/expanded_MRSI_dataset/3_optical-sar/008/06,00.PNG,06.PNG,06.npy,0,0,0.0,0,10.0,52.46419500326738
+expanded_MRSI_dataset,3 optical-sar,optical-sar,008,swinmatcherbit/paper_test/expanded_MRSI_dataset/3_optical-sar/008/07,00.PNG,07.PNG,07.npy,0,0,0.0,0,10.0,74.69509803922847
+expanded_MRSI_dataset,3 optical-sar,optical-sar,008,swinmatcherbit/paper_test/expanded_MRSI_dataset/3_optical-sar/008/08,00.PNG,08.PNG,08.npy,0,0,0.0,0,10.0,70.28018601704389
+expanded_MRSI_dataset,3 optical-sar,optical-sar,008,swinmatcherbit/paper_test/expanded_MRSI_dataset/3_optical-sar/008/09,00.PNG,09.PNG,09.npy,0,0,0.0,0,10.0,48.77777100773528
+expanded_MRSI_dataset,3 optical-sar,optical-sar,008,swinmatcherbit/paper_test/expanded_MRSI_dataset/3_optical-sar/008/10,00.PNG,10.PNG,10.npy,0,0,0.0,0,10.0,53.48131502978504
+expanded_MRSI_dataset,3 optical-sar,optical-sar,009,swinmatcherbit/paper_test/expanded_MRSI_dataset/3_optical-sar/009/01,00.PNG,01.PNG,01.npy,0,0,0.0,0,10.0,54.94895199080929
+expanded_MRSI_dataset,3 optical-sar,optical-sar,009,swinmatcherbit/paper_test/expanded_MRSI_dataset/3_optical-sar/009/02,00.PNG,02.PNG,02.npy,0,0,0.0,0,10.0,90.54278203984722
+expanded_MRSI_dataset,3 optical-sar,optical-sar,009,swinmatcherbit/paper_test/expanded_MRSI_dataset/3_optical-sar/009/03,00.PNG,03.PNG,03.npy,0,0,0.0,0,10.0,285.87736800545827
+expanded_MRSI_dataset,3 optical-sar,optical-sar,009,swinmatcherbit/paper_test/expanded_MRSI_dataset/3_optical-sar/009/04,00.PNG,04.PNG,04.npy,0,0,0.0,0,10.0,90.4669490410015
+expanded_MRSI_dataset,3 optical-sar,optical-sar,009,swinmatcherbit/paper_test/expanded_MRSI_dataset/3_optical-sar/009/05,00.PNG,05.PNG,05.npy,0,0,0.0,0,10.0,43.54469303507358
+expanded_MRSI_dataset,3 optical-sar,optical-sar,009,swinmatcherbit/paper_test/expanded_MRSI_dataset/3_optical-sar/009/06,00.PNG,06.PNG,06.npy,0,0,0.0,0,10.0,42.539365007542074
+expanded_MRSI_dataset,3 optical-sar,optical-sar,009,swinmatcherbit/paper_test/expanded_MRSI_dataset/3_optical-sar/009/07,00.PNG,07.PNG,07.npy,0,0,0.0,0,10.0,35.933759005274624
+expanded_MRSI_dataset,3 optical-sar,optical-sar,009,swinmatcherbit/paper_test/expanded_MRSI_dataset/3_optical-sar/009/08,00.PNG,08.PNG,08.npy,0,0,0.0,0,10.0,207.14884402696043
+expanded_MRSI_dataset,3 optical-sar,optical-sar,009,swinmatcherbit/paper_test/expanded_MRSI_dataset/3_optical-sar/009/09,00.PNG,09.PNG,09.npy,0,0,0.0,0,10.0,66.4742779918015
+expanded_MRSI_dataset,3 optical-sar,optical-sar,009,swinmatcherbit/paper_test/expanded_MRSI_dataset/3_optical-sar/009/10,00.PNG,10.PNG,10.npy,0,0,0.0,0,10.0,86.39897900866345
+proposed_test_dataset,scene3_Optical-SAR,optical-sar,000,swinmatcherbit/paper_test/proposed_test_dataset/scene3_Optical-SAR/000/01,00.PNG,01.PNG,01.npy,0,0,0.0,0,10.0,283.3907000022009
+proposed_test_dataset,scene3_Optical-SAR,optical-sar,000,swinmatcherbit/paper_test/proposed_test_dataset/scene3_Optical-SAR/000/02,00.PNG,02.PNG,02.npy,0,0,0.0,0,10.0,47.633440990466624
+proposed_test_dataset,scene3_Optical-SAR,optical-sar,000,swinmatcherbit/paper_test/proposed_test_dataset/scene3_Optical-SAR/000/03,00.PNG,03.PNG,03.npy,0,0,0.0,0,10.0,68.55394196463749
+proposed_test_dataset,scene3_Optical-SAR,optical-sar,000,swinmatcherbit/paper_test/proposed_test_dataset/scene3_Optical-SAR/000/04,00.PNG,04.PNG,04.npy,0,0,0.0,0,10.0,58.8714070036076
+proposed_test_dataset,scene3_Optical-SAR,optical-sar,000,swinmatcherbit/paper_test/proposed_test_dataset/scene3_Optical-SAR/000/05,00.PNG,05.PNG,05.npy,0,0,0.0,0,10.0,79.03974497457966
+proposed_test_dataset,scene3_Optical-SAR,optical-sar,000,swinmatcherbit/paper_test/proposed_test_dataset/scene3_Optical-SAR/000/06,00.PNG,06.PNG,06.npy,0,0,0.0,0,10.0,257.6169639942236
+proposed_test_dataset,scene3_Optical-SAR,optical-sar,000,swinmatcherbit/paper_test/proposed_test_dataset/scene3_Optical-SAR/000/07,00.PNG,07.PNG,07.npy,0,0,0.0,0,10.0,80.31923900125548
+proposed_test_dataset,scene3_Optical-SAR,optical-sar,000,swinmatcherbit/paper_test/proposed_test_dataset/scene3_Optical-SAR/000/08,00.PNG,08.PNG,08.npy,0,0,0.0,0,10.0,90.88633500505239
+proposed_test_dataset,scene3_Optical-SAR,optical-sar,000,swinmatcherbit/paper_test/proposed_test_dataset/scene3_Optical-SAR/000/09,00.PNG,09.PNG,09.npy,0,0,0.0,0,10.0,85.73328697821125
+proposed_test_dataset,scene3_Optical-SAR,optical-sar,000,swinmatcherbit/paper_test/proposed_test_dataset/scene3_Optical-SAR/000/10,00.PNG,10.PNG,10.npy,0,0,0.0,0,10.0,162.36797597957775
+proposed_test_dataset,scene3_Optical-SAR,optical-sar,001,swinmatcherbit/paper_test/proposed_test_dataset/scene3_Optical-SAR/001/01,00.PNG,01.PNG,01.npy,0,0,0.0,0,10.0,91.35852195322514
+proposed_test_dataset,scene3_Optical-SAR,optical-sar,001,swinmatcherbit/paper_test/proposed_test_dataset/scene3_Optical-SAR/001/02,00.PNG,02.PNG,02.npy,0,0,0.0,0,10.0,90.66658199299127
+proposed_test_dataset,scene3_Optical-SAR,optical-sar,001,swinmatcherbit/paper_test/proposed_test_dataset/scene3_Optical-SAR/001/03,00.PNG,03.PNG,03.npy,0,0,0.0,0,10.0,249.87162702018395
+proposed_test_dataset,scene3_Optical-SAR,optical-sar,001,swinmatcherbit/paper_test/proposed_test_dataset/scene3_Optical-SAR/001/04,00.PNG,04.PNG,04.npy,0,0,0.0,0,10.0,75.34513698192313
+proposed_test_dataset,scene3_Optical-SAR,optical-sar,001,swinmatcherbit/paper_test/proposed_test_dataset/scene3_Optical-SAR/001/05,00.PNG,05.PNG,05.npy,0,0,0.0,0,10.0,43.35609800182283
+proposed_test_dataset,scene3_Optical-SAR,optical-sar,001,swinmatcherbit/paper_test/proposed_test_dataset/scene3_Optical-SAR/001/06,00.PNG,06.PNG,06.npy,0,0,0.0,0,10.0,232.83269599778578
+proposed_test_dataset,scene3_Optical-SAR,optical-sar,001,swinmatcherbit/paper_test/proposed_test_dataset/scene3_Optical-SAR/001/07,00.PNG,07.PNG,07.npy,0,0,0.0,0,10.0,90.52439499646425
+proposed_test_dataset,scene3_Optical-SAR,optical-sar,001,swinmatcherbit/paper_test/proposed_test_dataset/scene3_Optical-SAR/001/08,00.PNG,08.PNG,08.npy,0,0,0.0,0,10.0,90.53276001941413
+proposed_test_dataset,scene3_Optical-SAR,optical-sar,001,swinmatcherbit/paper_test/proposed_test_dataset/scene3_Optical-SAR/001/09,00.PNG,09.PNG,09.npy,0,0,0.0,0,10.0,90.91748396167532
+proposed_test_dataset,scene3_Optical-SAR,optical-sar,001,swinmatcherbit/paper_test/proposed_test_dataset/scene3_Optical-SAR/001/10,00.PNG,10.PNG,10.npy,0,0,0.0,0,10.0,68.31436196807772
+proposed_test_dataset,scene3_Optical-SAR,optical-sar,002,swinmatcherbit/paper_test/proposed_test_dataset/scene3_Optical-SAR/002/01,00.PNG,01.PNG,01.npy,0,0,0.0,0,10.0,90.85759095614776
+proposed_test_dataset,scene3_Optical-SAR,optical-sar,002,swinmatcherbit/paper_test/proposed_test_dataset/scene3_Optical-SAR/002/02,00.PNG,02.PNG,02.npy,0,0,0.0,0,10.0,322.4784610210918
+proposed_test_dataset,scene3_Optical-SAR,optical-sar,002,swinmatcherbit/paper_test/proposed_test_dataset/scene3_Optical-SAR/002/03,00.PNG,03.PNG,03.npy,0,0,0.0,0,10.0,37.23058302421123
+proposed_test_dataset,scene3_Optical-SAR,optical-sar,002,swinmatcherbit/paper_test/proposed_test_dataset/scene3_Optical-SAR/002/04,00.PNG,04.PNG,04.npy,0,0,0.0,0,10.0,49.80997904203832
+proposed_test_dataset,scene3_Optical-SAR,optical-sar,002,swinmatcherbit/paper_test/proposed_test_dataset/scene3_Optical-SAR/002/05,00.PNG,05.PNG,05.npy,0,0,0.0,0,10.0,89.76586099015549
+proposed_test_dataset,scene3_Optical-SAR,optical-sar,002,swinmatcherbit/paper_test/proposed_test_dataset/scene3_Optical-SAR/002/06,00.PNG,06.PNG,06.npy,0,0,0.0,0,10.0,80.55817702552304
+proposed_test_dataset,scene3_Optical-SAR,optical-sar,002,swinmatcherbit/paper_test/proposed_test_dataset/scene3_Optical-SAR/002/07,00.PNG,07.PNG,07.npy,0,0,0.0,0,10.0,82.54304499132559
+proposed_test_dataset,scene3_Optical-SAR,optical-sar,002,swinmatcherbit/paper_test/proposed_test_dataset/scene3_Optical-SAR/002/08,00.PNG,08.PNG,08.npy,0,0,0.0,0,10.0,212.47512300033122
+proposed_test_dataset,scene3_Optical-SAR,optical-sar,002,swinmatcherbit/paper_test/proposed_test_dataset/scene3_Optical-SAR/002/09,00.PNG,09.PNG,09.npy,0,0,0.0,0,10.0,48.130664974451065
+proposed_test_dataset,scene3_Optical-SAR,optical-sar,002,swinmatcherbit/paper_test/proposed_test_dataset/scene3_Optical-SAR/002/10,00.PNG,10.PNG,10.npy,0,0,0.0,0,10.0,44.20802800450474
+proposed_test_dataset,scene3_Optical-SAR,optical-sar,003,swinmatcherbit/paper_test/proposed_test_dataset/scene3_Optical-SAR/003/01,00.PNG,01.PNG,01.npy,0,0,0.0,0,10.0,81.48064895067364
+proposed_test_dataset,scene3_Optical-SAR,optical-sar,003,swinmatcherbit/paper_test/proposed_test_dataset/scene3_Optical-SAR/003/02,00.PNG,02.PNG,02.npy,0,0,0.0,0,10.0,70.78973099123687
+proposed_test_dataset,scene3_Optical-SAR,optical-sar,003,swinmatcherbit/paper_test/proposed_test_dataset/scene3_Optical-SAR/003/03,00.PNG,03.PNG,03.npy,0,0,0.0,0,10.0,80.42729098815471
+proposed_test_dataset,scene3_Optical-SAR,optical-sar,003,swinmatcherbit/paper_test/proposed_test_dataset/scene3_Optical-SAR/003/04,00.PNG,04.PNG,04.npy,0,0,0.0,0,10.0,35.9755459940061
+proposed_test_dataset,scene3_Optical-SAR,optical-sar,003,swinmatcherbit/paper_test/proposed_test_dataset/scene3_Optical-SAR/003/05,00.PNG,05.PNG,05.npy,0,0,0.0,0,10.0,112.16938600409776
+proposed_test_dataset,scene3_Optical-SAR,optical-sar,003,swinmatcherbit/paper_test/proposed_test_dataset/scene3_Optical-SAR/003/06,00.PNG,06.PNG,06.npy,0,0,0.0,0,10.0,90.44862299924716
+proposed_test_dataset,scene3_Optical-SAR,optical-sar,003,swinmatcherbit/paper_test/proposed_test_dataset/scene3_Optical-SAR/003/07,00.PNG,07.PNG,07.npy,0,0,0.0,0,10.0,91.33229195140302
+proposed_test_dataset,scene3_Optical-SAR,optical-sar,003,swinmatcherbit/paper_test/proposed_test_dataset/scene3_Optical-SAR/003/08,00.PNG,08.PNG,08.npy,0,0,0.0,0,10.0,90.52773099392653
+proposed_test_dataset,scene3_Optical-SAR,optical-sar,003,swinmatcherbit/paper_test/proposed_test_dataset/scene3_Optical-SAR/003/09,00.PNG,09.PNG,09.npy,0,0,0.0,0,10.0,232.9142490052618
+proposed_test_dataset,scene3_Optical-SAR,optical-sar,003,swinmatcherbit/paper_test/proposed_test_dataset/scene3_Optical-SAR/003/10,00.PNG,10.PNG,10.npy,0,0,0.0,0,10.0,57.589278963860124
+proposed_test_dataset,scene3_Optical-SAR,optical-sar,004,swinmatcherbit/paper_test/proposed_test_dataset/scene3_Optical-SAR/004/01,00.PNG,01.PNG,01.npy,0,0,0.0,0,10.0,90.16828599851578
+proposed_test_dataset,scene3_Optical-SAR,optical-sar,004,swinmatcherbit/paper_test/proposed_test_dataset/scene3_Optical-SAR/004/02,00.PNG,02.PNG,02.npy,0,0,0.0,0,10.0,50.71925697848201
+proposed_test_dataset,scene3_Optical-SAR,optical-sar,004,swinmatcherbit/paper_test/proposed_test_dataset/scene3_Optical-SAR/004/03,00.PNG,03.PNG,03.npy,0,0,0.0,0,10.0,337.3056179843843
+proposed_test_dataset,scene3_Optical-SAR,optical-sar,004,swinmatcherbit/paper_test/proposed_test_dataset/scene3_Optical-SAR/004/04,00.PNG,04.PNG,04.npy,0,0,0.0,0,10.0,67.5635120132938
+proposed_test_dataset,scene3_Optical-SAR,optical-sar,004,swinmatcherbit/paper_test/proposed_test_dataset/scene3_Optical-SAR/004/05,00.PNG,05.PNG,05.npy,0,0,0.0,0,10.0,55.87690294487402
+proposed_test_dataset,scene3_Optical-SAR,optical-sar,004,swinmatcherbit/paper_test/proposed_test_dataset/scene3_Optical-SAR/004/06,00.PNG,06.PNG,06.npy,0,0,0.0,0,10.0,90.36511601880193
+proposed_test_dataset,scene3_Optical-SAR,optical-sar,004,swinmatcherbit/paper_test/proposed_test_dataset/scene3_Optical-SAR/004/07,00.PNG,07.PNG,07.npy,0,0,0.0,0,10.0,218.051484960597
+proposed_test_dataset,scene3_Optical-SAR,optical-sar,004,swinmatcherbit/paper_test/proposed_test_dataset/scene3_Optical-SAR/004/08,00.PNG,08.PNG,08.npy,0,0,0.0,0,10.0,36.30086698103696
+proposed_test_dataset,scene3_Optical-SAR,optical-sar,004,swinmatcherbit/paper_test/proposed_test_dataset/scene3_Optical-SAR/004/09,00.PNG,09.PNG,09.npy,0,0,0.0,0,10.0,195.18194301053882
+proposed_test_dataset,scene3_Optical-SAR,optical-sar,004,swinmatcherbit/paper_test/proposed_test_dataset/scene3_Optical-SAR/004/10,00.PNG,10.PNG,10.npy,0,0,0.0,0,10.0,80.69930202327669
+proposed_test_dataset,scene3_Optical-SAR,optical-sar,005,swinmatcherbit/paper_test/proposed_test_dataset/scene3_Optical-SAR/005/01,00.PNG,01.PNG,01.npy,0,0,0.0,0,10.0,49.0633969893679
+proposed_test_dataset,scene3_Optical-SAR,optical-sar,005,swinmatcherbit/paper_test/proposed_test_dataset/scene3_Optical-SAR/005/02,00.PNG,02.PNG,02.npy,0,0,0.0,0,10.0,89.86583800287917
+proposed_test_dataset,scene3_Optical-SAR,optical-sar,005,swinmatcherbit/paper_test/proposed_test_dataset/scene3_Optical-SAR/005/03,00.PNG,03.PNG,03.npy,0,0,0.0,0,10.0,90.56304697878659
+proposed_test_dataset,scene3_Optical-SAR,optical-sar,005,swinmatcherbit/paper_test/proposed_test_dataset/scene3_Optical-SAR/005/04,00.PNG,04.PNG,04.npy,0,0,0.0,0,10.0,190.3767489711754
+proposed_test_dataset,scene3_Optical-SAR,optical-sar,005,swinmatcherbit/paper_test/proposed_test_dataset/scene3_Optical-SAR/005/05,00.PNG,05.PNG,05.npy,0,0,0.0,0,10.0,63.417985977139324
+proposed_test_dataset,scene3_Optical-SAR,optical-sar,005,swinmatcherbit/paper_test/proposed_test_dataset/scene3_Optical-SAR/005/06,00.PNG,06.PNG,06.npy,0,0,0.0,0,10.0,46.65923095308244
+proposed_test_dataset,scene3_Optical-SAR,optical-sar,005,swinmatcherbit/paper_test/proposed_test_dataset/scene3_Optical-SAR/005/07,00.PNG,07.PNG,07.npy,0,0,0.0,0,10.0,83.7217090302147
+proposed_test_dataset,scene3_Optical-SAR,optical-sar,005,swinmatcherbit/paper_test/proposed_test_dataset/scene3_Optical-SAR/005/08,00.PNG,08.PNG,08.npy,0,0,0.0,0,10.0,233.0537709640339
+proposed_test_dataset,scene3_Optical-SAR,optical-sar,005,swinmatcherbit/paper_test/proposed_test_dataset/scene3_Optical-SAR/005/09,00.PNG,09.PNG,09.npy,0,0,0.0,0,10.0,258.614256978035
+proposed_test_dataset,scene3_Optical-SAR,optical-sar,005,swinmatcherbit/paper_test/proposed_test_dataset/scene3_Optical-SAR/005/10,00.PNG,10.PNG,10.npy,0,0,0.0,0,10.0,63.20260197389871
+proposed_test_dataset,scene3_Optical-SAR,optical-sar,006,swinmatcherbit/paper_test/proposed_test_dataset/scene3_Optical-SAR/006/01,00.PNG,01.PNG,01.npy,0,0,0.0,0,10.0,62.967018980998546
+proposed_test_dataset,scene3_Optical-SAR,optical-sar,006,swinmatcherbit/paper_test/proposed_test_dataset/scene3_Optical-SAR/006/02,00.PNG,02.PNG,02.npy,0,0,0.0,0,10.0,161.6263220203109
+proposed_test_dataset,scene3_Optical-SAR,optical-sar,006,swinmatcherbit/paper_test/proposed_test_dataset/scene3_Optical-SAR/006/03,00.PNG,03.PNG,03.npy,0,0,0.0,0,10.0,48.704672954045236
+proposed_test_dataset,scene3_Optical-SAR,optical-sar,006,swinmatcherbit/paper_test/proposed_test_dataset/scene3_Optical-SAR/006/04,00.PNG,04.PNG,04.npy,0,0,0.0,0,10.0,79.9351769965142
+proposed_test_dataset,scene3_Optical-SAR,optical-sar,006,swinmatcherbit/paper_test/proposed_test_dataset/scene3_Optical-SAR/006/05,00.PNG,05.PNG,05.npy,0,0,0.0,0,10.0,229.63538096519187
+proposed_test_dataset,scene3_Optical-SAR,optical-sar,006,swinmatcherbit/paper_test/proposed_test_dataset/scene3_Optical-SAR/006/06,00.PNG,06.PNG,06.npy,0,0,0.0,0,10.0,90.81268595764413
+proposed_test_dataset,scene3_Optical-SAR,optical-sar,006,swinmatcherbit/paper_test/proposed_test_dataset/scene3_Optical-SAR/006/07,00.PNG,07.PNG,07.npy,0,0,0.0,0,10.0,80.72651299880818
+proposed_test_dataset,scene3_Optical-SAR,optical-sar,006,swinmatcherbit/paper_test/proposed_test_dataset/scene3_Optical-SAR/006/08,00.PNG,08.PNG,08.npy,0,0,0.0,0,10.0,141.14502602024004
+proposed_test_dataset,scene3_Optical-SAR,optical-sar,006,swinmatcherbit/paper_test/proposed_test_dataset/scene3_Optical-SAR/006/09,00.PNG,09.PNG,09.npy,0,0,0.0,0,10.0,36.63521399721503
+proposed_test_dataset,scene3_Optical-SAR,optical-sar,006,swinmatcherbit/paper_test/proposed_test_dataset/scene3_Optical-SAR/006/10,00.PNG,10.PNG,10.npy,0,0,0.0,0,10.0,36.9647839688696

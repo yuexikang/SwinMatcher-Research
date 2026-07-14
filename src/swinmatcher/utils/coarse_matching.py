@@ -96,9 +96,10 @@ class CoarseMatching(nn.Module):
         sim_matrix = torch.einsum("nlc,nsc->nls", feat_c0,
                                   feat_c1) / self.temperature
         if mask_c0 is not None:
+            mask_value = torch.finfo(sim_matrix.dtype).min
             sim_matrix.masked_fill_(
                 ~(mask_c0[..., None] * mask_c1[:, None]).bool(),
-                -INF)
+                mask_value)
 
         conf_matrix_0_to_1 = F.softmax(sim_matrix, 2)
         conf_matrix_1_to_0 = F.softmax(sim_matrix, 1)
@@ -151,9 +152,16 @@ class CoarseMatching(nn.Module):
 
         # 2. find all valid coarse matches
         b_ids, i_ids, j_ids = mask.nonzero(as_tuple=True)
-
+        num_matches_pred_raw = len(b_ids)
         mconf = torch.maximum(conf_matrix_0_to_1[b_ids, i_ids, j_ids],
                               conf_matrix_1_to_0[b_ids, i_ids, j_ids])
+
+        # Keep the unpadded candidate count for diagnostics.  ``mconf`` below is
+        # intentionally filtered to predictions only, so it cannot reveal GT padding.
+        data['coarse_raw_pred_match_count'] = torch.tensor(
+            num_matches_pred_raw, device=_device, dtype=torch.long)
+        data['coarse_gt_padded_for_fine_count'] = torch.zeros(
+            (), device=_device, dtype=torch.long)
 
         # 3. Random sampling of training samples for fine-level SwinMatcher
         # (optional) pad samples with gt coarse-level matches
@@ -169,7 +177,7 @@ class CoarseMatching(nn.Module):
                     data['mask0'], data['mask1'])
             num_matches_train = int(num_candidates_max *
                                     self.train_coarse_percent)
-            num_matches_pred = len(b_ids)
+            num_matches_pred = num_matches_pred_raw
             assert self.train_pad_num_gt_min < num_matches_train, "min-num-gt-pad should be less than num-train-matches"
 
             # pred_indices is to select from prediction
@@ -187,6 +195,8 @@ class CoarseMatching(nn.Module):
                     (max(num_matches_train - num_matches_pred,
                         self.train_pad_num_gt_min), ),
                     device=_device)
+            data['coarse_gt_padded_for_fine_count'] = torch.tensor(
+                len(gt_pad_indices), device=_device, dtype=torch.long)
             mconf_gt = torch.zeros(len(data['spv_b_ids']), device=_device)  # set conf of gt paddings to all zero
 
             b_ids, i_ids, j_ids, mconf = map(
@@ -194,6 +204,9 @@ class CoarseMatching(nn.Module):
                                        dim=0),
                 *zip([b_ids, data['spv_b_ids']], [i_ids, data['spv_i_ids']],
                      [j_ids, data['spv_j_ids']], [mconf, mconf_gt]))
+
+        data['coarse_fine_input_match_count'] = torch.tensor(
+            len(b_ids), device=_device, dtype=torch.long)
 
         # These matches select patches that feed into fine-level network
         coarse_matches = {'b_ids': b_ids, 'i_ids': i_ids, 'j_ids': j_ids}

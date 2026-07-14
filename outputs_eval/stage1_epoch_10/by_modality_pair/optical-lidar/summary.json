@@ -1,0 +1,23 @@
+{
+  "modality_pair": "optical-lidar",
+  "protocol": {
+    "NCM": "number of matches with ||T(p)-q||_2 <= 5.0 pixels",
+    "Pre": "NCM divided by total produced matches for each image pair",
+    "SR": "success ratio of pairs with NCM >= 20",
+    "RMSE": "sqrt(mean squared reprojection error of correct matches) for successful pairs; 10.0 for failed pairs",
+    "filtering": "ground-truth label only; no RANSAC outlier removal",
+    "SwinMatcher_thresholds": {
+      "theta_c": 0.3,
+      "theta_f": 0.1
+    }
+  },
+  "overall": {
+    "num_pairs": 50,
+    "NCM": 0.0,
+    "Pre": 0.0,
+    "SR": 0.0,
+    "RMSE": 10.0,
+    "mean_matches": 0.0,
+    "mean_runtime_ms": 127.17362542054616
+  }
+}

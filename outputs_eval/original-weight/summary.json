@@ -1,0 +1,96 @@
+{
+  "protocol": {
+    "NCM": "number of matches with ||T(p)-q||_2 <= 5.0 pixels",
+    "Pre": "NCM divided by total produced matches for each image pair",
+    "SR": "success ratio of pairs with NCM >= 20",
+    "RMSE": "sqrt(mean squared reprojection error of correct matches) for successful pairs; 10.0 for failed pairs",
+    "filtering": "ground-truth label only; no RANSAC outlier removal",
+    "SwinMatcher_thresholds": {
+      "theta_c": 0.3,
+      "theta_f": 0.1
+    }
+  },
+  "overall": {
+    "num_pairs": 1000,
+    "NCM": 1522.366,
+    "Pre": 0.7087824053516789,
+    "SR": 0.987,
+    "RMSE": 2.7931483435630797,
+    "mean_matches": 1991.013,
+    "mean_runtime_ms": 139.45174425299047
+  },
+  "by_modality_pair": {
+    "optical-depth": {
+      "num_pairs": 100,
+      "NCM": 1674.22,
+      "Pre": 0.7493865727034398,
+      "SR": 1.0,
+      "RMSE": 2.7850349950790405,
+      "mean_matches": 2205.47,
+      "mean_runtime_ms": 137.74800323997624
+    },
+    "optical-infrared": {
+      "num_pairs": 100,
+      "NCM": 1788.75,
+      "Pre": 0.8163796731851315,
+      "SR": 1.0,
+      "RMSE": 2.49345396399498,
+      "mean_matches": 2151.25,
+      "mean_runtime_ms": 136.97897093952633
+    },
+    "optical-lidar": {
+      "num_pairs": 50,
+      "NCM": 1820.18,
+      "Pre": 0.6495030827176644,
+      "SR": 1.0,
+      "RMSE": 2.5504136729240416,
+      "mean_matches": 2639.72,
+      "mean_runtime_ms": 139.92500750231557
+    },
+    "optical-map": {
+      "num_pairs": 200,
+      "NCM": 868.535,
+      "Pre": 0.6596542256331412,
+      "SR": 0.985,
+      "RMSE": 3.0252594566345214,
+      "mean_matches": 1220.87,
+      "mean_runtime_ms": 135.19368544511963
+    },
+    "optical-optical": {
+      "num_pairs": 100,
+      "NCM": 1087.23,
+      "Pre": 0.6332617734914521,
+      "SR": 1.0,
+      "RMSE": 2.8307991933822634,
+      "mean_matches": 1600.59,
+      "mean_runtime_ms": 145.62535158824176
+    },
+    "optical-sar": {
+      "num_pairs": 170,
+      "NCM": 1772.2588235294118,
+      "Pre": 0.7058669686182014,
+      "SR": 0.9941176470588236,
+      "RMSE": 2.7697456394924838,
+      "mean_matches": 2370.170588235294,
+      "mean_runtime_ms": 133.464260293883
+    },
+    "optical_day-optical_night": {
+      "num_pairs": 100,
+      "NCM": 618.77,
+      "Pre": 0.5569751122754688,
+      "SR": 0.92,
+      "RMSE": 3.4634223580360413,
+      "mean_matches": 902.14,
+      "mean_runtime_ms": 142.75356465717778
+    },
+    "sar-lidar": {
+      "num_pairs": 180,
+      "NCM": 2441.4944444444445,
+      "Pre": 0.8265483792140221,
+      "SR": 0.9944444444444445,
+      "RMSE": 2.4024886601501043,
+      "mean_matches": 2922.1055555555554,
+      "mean_runtime_ms": 146.76246386888022
+    }
+  }
+}

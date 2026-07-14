@@ -1,0 +1,23 @@
+{
+  "modality_pair": "sar-lidar",
+  "protocol": {
+    "NCM": "number of matches with ||T(p)-q||_2 <= 5.0 pixels",
+    "Pre": "NCM divided by total produced matches for each image pair",
+    "SR": "success ratio of pairs with NCM >= 20",
+    "RMSE": "sqrt(mean squared reprojection error of correct matches) for successful pairs; 10.0 for failed pairs",
+    "filtering": "ground-truth label only; no RANSAC outlier removal",
+    "SwinMatcher_thresholds": {
+      "theta_c": 0.3,
+      "theta_f": 0.1
+    }
+  },
+  "overall": {
+    "num_pairs": 180,
+    "NCM": 2441.4944444444445,
+    "Pre": 0.8265483792140221,
+    "SR": 0.9944444444444445,
+    "RMSE": 2.4024886601501043,
+    "mean_matches": 2922.1055555555554,
+    "mean_runtime_ms": 146.76246386888022
+  }
+}

@@ -46,6 +46,10 @@ class SwinMatcher(nn.Module):
             'hw0_c': feat_c0.shape[2:], 'hw1_c': feat_c1.shape[2:],
             'hw0_f': feat_f0.shape[2:], 'hw1_f': feat_f1.shape[2:]
         })
+        data.update({
+            'feat_c0_vis': feat_c0.detach(), 'feat_c1_vis': feat_c1.detach(),
+            'feat_f0_vis': feat_f0.detach(), 'feat_f1_vis': feat_f1.detach()
+        })
 
         # 2. coarse-level swinmatcher module
         # add featmap with positional encoding, then flatten it to sequence [N, HW, C]

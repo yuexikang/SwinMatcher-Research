@@ -74,6 +74,7 @@ _CN.DATASET = CN()
 # training and validating
 _CN.DATASET.TRAINVAL_DATA_SOURCE = None  # options: ['ScanNet', 'MegaDepth']
 _CN.DATASET.TRAIN_DATA_ROOT = None
+_CN.DATASET.TRAIN_MANIFEST_PATH = None
 _CN.DATASET.TRAIN_POSE_ROOT = None  # (optional directory for poses)
 _CN.DATASET.TRAIN_NPZ_ROOT = None
 _CN.DATASET.TRAIN_LIST_PATH = None
@@ -86,6 +87,7 @@ _CN.DATASET.VAL_INTRINSIC_PATH = None
 # testing
 _CN.DATASET.TEST_DATA_SOURCE = None
 _CN.DATASET.TEST_DATA_ROOT = None
+_CN.DATASET.TEST_MANIFEST_PATH = None
 _CN.DATASET.TEST_POSE_ROOT = None  # (optional directory for poses)
 _CN.DATASET.TEST_NPZ_ROOT = None
 _CN.DATASET.TEST_LIST_PATH = None   # None if test data from all scenes are bundled into a single npz file
@@ -96,6 +98,10 @@ _CN.DATASET.TEST_INTRINSIC_PATH = None
 _CN.DATASET.MIN_OVERLAP_SCORE_TRAIN = 0.4  # discard data with overlap_score < min_overlap_score
 _CN.DATASET.MIN_OVERLAP_SCORE_TEST = 0.0
 _CN.DATASET.AUGMENTATION_TYPE = None  # options: [None, 'dark', 'mobile']
+_CN.DATASET.PSEUDO_THERMAL_PROB = 0.0
+_CN.DATASET.MGDPT_IMG_RESIZE = 512
+_CN.DATASET.MGDPT_IMG_PAD = True
+_CN.DATASET.MGDPT_DF = 8
 
 ##############  Trainer  ##############
 _CN.TRAINER = CN()
@@ -121,6 +127,10 @@ _CN.TRAINER.SCHEDULER = 'MultiStepLR'  # [MultiStepLR, CosineAnnealing, Exponent
 _CN.TRAINER.SCHEDULER_INTERVAL = 'epoch'    # [epoch, step]
 _CN.TRAINER.MSLR_MILESTONES = [3, 6, 9, 12]  # MSLR: MultiStepLR
 _CN.TRAINER.MSLR_GAMMA = 0.5
+_CN.TRAINER.MAX_EPOCHS = 30
+_CN.TRAINER.VIS_INTERVAL = 200
+_CN.TRAINER.VIS_MAX_MATCHES = 200
+_CN.TRAINER.VAL_BATCHES = 1.0
 _CN.TRAINER.COSA_TMAX = 30  # COSA: CosineAnnealing
 _CN.TRAINER.ELR_GAMMA = 0.999992  # ELR: ExponentialLR, this value for 'step' interval
 
@@ -129,6 +139,8 @@ _CN.TRAINER.ENABLE_PLOTTING = True
 _CN.TRAINER.N_VAL_PAIRS_TO_PLOT = 32     # number of val/test paris for plotting
 _CN.TRAINER.PLOT_MODE = 'evaluation'  # ['evaluation', 'confidence']
 _CN.TRAINER.PLOT_MATCHES_ALPHA = 'dynamic'
+_CN.TRAINER.RANSAC_PIXEL_THR = 0.5
+_CN.TRAINER.LOG_DIR = 'outputs/training'
 
 # data sampler for train_dataloader
 _CN.TRAINER.DATA_SAMPLER = 'scene_balance'  # options: ['scene_balance', 'random', 'normal']

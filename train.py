@@ -38,10 +38,10 @@ def parse_args():
     # check documentation: https://pytorch-lightning.readthedocs.io/en/latest/common/trainer.html#trainer-flags
     parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
     parser.add_argument(
-        '--data_cfg_path', type=str, default='/root/my_project/SwinMatcher/configs/multi_modality_512.py',
+        '--data_cfg_path', type=str, default='configs/multi_modality_512.py',
         help='data config path')
     parser.add_argument(
-        '--main_cfg_path', type=str, default='/root/my_project/SwinMatcher/configs/swinmatcher_ds.py',
+        '--main_cfg_path', type=str, default='configs/swinmatcher_ds.py',
         help='main config path')
     parser.add_argument(
         '--exp_name', type=str, default='SwinMatcher')
@@ -54,7 +54,10 @@ def parse_args():
         nargs='?', default=True, help='whether loading data to pinned memory or not')
     parser.add_argument(
         '--ckpt_path', type=str, default=None,
-        help='pretrained checkpoint path, helpful for using a pre-trained coarse-only SwinMatcher')
+        help='model-only pretrained checkpoint path. This starts a new optimizer/scheduler state.')
+    parser.add_argument(
+        '--resume_ckpt_path', type=str, default=None,
+        help='full Lightning checkpoint path for continuing training with optimizer/scheduler/global_step.')
     parser.add_argument(
         '--disable_ckpt', action='store_true',
         help='disable checkpoint saving (useful for debugging).')
@@ -64,6 +67,21 @@ def parse_args():
     parser.add_argument(
         '--parallel_load_data', action='store_true',
         help='load datasets in with multiple processes.')
+    parser.add_argument(
+        '--use_wandb', action='store_true',
+        help='also log training metrics to Weights & Biases.')
+    parser.add_argument(
+        '--wandb_project', type=str, default='SwinMatcher',
+        help='Weights & Biases project name.')
+    parser.add_argument(
+        '--wandb_entity', type=str, default=None,
+        help='Weights & Biases entity/user/team.')
+    parser.add_argument(
+        '--wandb_name', type=str, default=None,
+        help='Weights & Biases run name. Defaults to exp_name.')
+    parser.add_argument(
+        '--wandb_mode', type=str, default='online', choices=['online', 'offline', 'disabled'],
+        help='Weights & Biases mode.')
 
     parser = pl.Trainer.add_argparse_args(parser)
     return parser.parse_args()
@@ -72,7 +90,8 @@ def parse_args():
 def main():
     # parse arguments
     args = parse_args()
-    args.gpus = -1
+    if args.gpus is None:
+        args.gpus = -1
     rank_zero_only(pprint.pprint)(vars(args))
 
     # init default-cfg and merge it with the main- and data-cfg
@@ -85,61 +104,94 @@ def main():
 
     # scale lr and warmup-step automatically
     args.gpus = _n_gpus = setup_gpus(args.gpus)
-    config.TRAINER.WORLD_SIZE = _n_gpus * args.num_nodes
+    config.TRAINER.WORLD_SIZE = max(1, _n_gpus * args.num_nodes)
     config.TRAINER.TRUE_BATCH_SIZE = config.TRAINER.WORLD_SIZE * args.batch_size
     _scaling = config.TRAINER.TRUE_BATCH_SIZE / config.TRAINER.CANONICAL_BS
     config.TRAINER.SCALING = _scaling
     config.TRAINER.TRUE_LR = config.TRAINER.CANONICAL_LR * _scaling
     # config.TRAINER.WARMUP_STEP = math.floor(config.TRAINER.WARMUP_STEP / _scaling)
 
-    # ----- pretrain -----
-    config.TRAINER.WARMUP_STEP = 3590 * 5  # step_number_per_epoch * epoch_number
-    config.TRAINER.MSLR_MILESTONES = [10, 15, 20, 25]
-
-    # ----- finetune -----
-    # config.TRAINER.TRUE_LR /= 4
-    # config.TRAINER.WARMUP_STEP = 0
-    # config.TRAINER.MSLR_MILESTONES = [4, 8, 12, 16]
+    resume_ckpt_path = args.resume_ckpt_path or getattr(args, 'resume_from_checkpoint', None)
+    if resume_ckpt_path and args.ckpt_path:
+        raise ValueError("--resume_ckpt_path/--resume_from_checkpoint cannot be used together with --ckpt_path.")
 
     # lightning module
     profiler = build_profiler(args.profiler_name)
-    model = PL_SwinMatcher(config, pretrained_ckpt=args.ckpt_path, profiler=profiler)
+    model = PL_SwinMatcher(config, pretrained_ckpt=None if resume_ckpt_path else args.ckpt_path, profiler=profiler)
     loguru_logger.info(f"SwinMatcher LightningModule initialized!")
 
     # lightning data
     data_module = MultiSceneDataModule(args, config)
     loguru_logger.info(f"SwinMatcher DataModule initialized!")
 
-    # TensorBoard Logger
-    logger = TensorBoardLogger(save_dir='/root/autodl-tmp/SwinMatcher_weights', name=args.exp_name, default_hp_metric=False)
-    ckpt_dir = Path(logger.log_dir) / 'checkpoints'
+    # Loggers
+    tb_logger = TensorBoardLogger(save_dir=config.TRAINER.LOG_DIR, name=args.exp_name, default_hp_metric=False)
+    loggers = [tb_logger]
+    if args.use_wandb:
+        try:
+            from pytorch_lightning.loggers import WandbLogger
+        except ImportError as exc:
+            raise ImportError("wandb is not installed. Run: conda run -n swinmatcher python -m pip install wandb") from exc
+        wandb_logger = WandbLogger(
+            project=args.wandb_project,
+            entity=args.wandb_entity,
+            name=args.wandb_name or args.exp_name,
+            save_dir=config.TRAINER.LOG_DIR,
+            offline=args.wandb_mode == 'offline',
+            log_model=False,
+        )
+        wandb_config = {
+            "data_cfg_path": args.data_cfg_path,
+            "main_cfg_path": args.main_cfg_path,
+            "batch_size_per_gpu": args.batch_size,
+            "world_size": config.TRAINER.WORLD_SIZE,
+            "true_batch_size": config.TRAINER.TRUE_BATCH_SIZE,
+            "true_lr": config.TRAINER.TRUE_LR,
+            "train_manifest_path": config.DATASET.TRAIN_MANIFEST_PATH,
+            "pseudo_thermal_prob": config.DATASET.PSEUDO_THERMAL_PROB,
+        }
+        try:
+            wandb_run_config = getattr(wandb_logger.experiment, "config", None)
+            if hasattr(wandb_run_config, "update"):
+                wandb_run_config.update(wandb_config, allow_val_change=True)
+            else:
+                wandb_logger.log_hyperparams(wandb_config)
+        except Exception as exc:
+            loguru_logger.warning(f"Skip W&B config update: {exc}")
+        loggers.append(wandb_logger)
+
+    ckpt_dir = Path(tb_logger.log_dir) / 'checkpoints'
 
     # Callbacks
     # TODO: update ModelCheckpoint to monitor multiple metrics
-    ckpt_callback = ModelCheckpoint(dirpath=str(ckpt_dir), filename='{epoch:02d}', save_top_k=-1)
+    ckpt_callback = ModelCheckpoint(dirpath=str(ckpt_dir), filename='{epoch:02d}', save_top_k=-1, save_last=True)
     lr_monitor = LearningRateMonitor(logging_interval='step')
     callbacks = [lr_monitor]
     if not args.disable_ckpt:
         callbacks.append(ckpt_callback)
 
     # Lightning Trainer
+    strategy = DDPPlugin(find_unused_parameters=True) if config.TRAINER.WORLD_SIZE > 1 else None
+    trainer_max_epochs = args.max_epochs if getattr(args, 'max_epochs', None) is not None else config.TRAINER.MAX_EPOCHS
     trainer = pl.Trainer.from_argparse_args(
         args,
-        plugins=DDPPlugin(find_unused_parameters=True,
-                          num_nodes=args.num_nodes,
-                          sync_batchnorm=config.TRAINER.WORLD_SIZE > 0),
+        strategy=strategy,
         gradient_clip_val=config.TRAINER.GRADIENT_CLIPPING,
         callbacks=callbacks,
-        logger=logger,
-        sync_batchnorm=config.TRAINER.WORLD_SIZE > 0,
+        logger=loggers,
+        sync_batchnorm=config.TRAINER.WORLD_SIZE > 1,
         replace_sampler_ddp=False,  # use custom sampler
-        reload_dataloaders_every_epoch=False,  # avoid repeated samples!
+        reload_dataloaders_every_n_epochs=0,  # avoid repeated samples!
         weights_summary='full',
         profiler=profiler,
-        max_epochs=30)  # set the max number of epoch
+        limit_val_batches=config.TRAINER.VAL_BATCHES,
+        enable_checkpointing=not args.disable_ckpt,
+        max_epochs=trainer_max_epochs)
     loguru_logger.info(f"Trainer initialized!")
     loguru_logger.info(f"Start training!")
-    trainer.fit(model, datamodule=data_module)
+    if resume_ckpt_path:
+        loguru_logger.info(f"Resume full training state from: {resume_ckpt_path}")
+    trainer.fit(model, datamodule=data_module, ckpt_path=resume_ckpt_path)
 
 
 if __name__ == '__main__':

@@ -1,0 +1,23 @@
+{
+  "modality_pair": "optical-depth",
+  "protocol": {
+    "NCM": "number of matches with ||T(p)-q||_2 <= 5.0 pixels",
+    "Pre": "NCM divided by total produced matches for each image pair",
+    "SR": "success ratio of pairs with NCM >= 20",
+    "RMSE": "sqrt(mean squared reprojection error of correct matches) for successful pairs; 10.0 for failed pairs",
+    "filtering": "ground-truth label only; no RANSAC outlier removal",
+    "SwinMatcher_thresholds": {
+      "theta_c": 0.3,
+      "theta_f": 0.1
+    }
+  },
+  "overall": {
+    "num_pairs": 100,
+    "NCM": 1006.38,
+    "Pre": 0.6596810039035103,
+    "SR": 0.9,
+    "RMSE": 3.628715121746063,
+    "mean_matches": 1344.81,
+    "mean_runtime_ms": 43.09468119055964
+  }
+}

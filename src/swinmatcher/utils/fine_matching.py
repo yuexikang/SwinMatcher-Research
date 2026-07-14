@@ -46,6 +46,7 @@ class FineMatching(nn.Module):
                 'mkpts0_f': data['mkpts0_c'],
                 'mkpts1_f': data['mkpts1_c'],
                 'mconf_f': torch.zeros(0, device=feat_f0_unfold.device),
+                'fine_fallback_used': torch.zeros((), device=feat_f0_unfold.device, dtype=torch.bool),
             })
             return
 
@@ -84,9 +85,12 @@ class FineMatching(nn.Module):
         # 1. confidence thresholding
         mask = conf_matrix_fine > self.fine_thr
 
-        if mask.sum() == 0:
+        fallback_used = mask.sum() == 0
+        if fallback_used:
             mask[0, 0, 0] = 1
             conf_matrix_fine[0, 0, 0] = 1
+        data['fine_fallback_used'] = torch.as_tensor(
+            fallback_used, device=conf_matrix_fine.device, dtype=torch.bool)
 
         # match only the highest confidence
         mask = mask * (conf_matrix_fine == conf_matrix_fine.amax(dim=[1, 2], keepdim=True))

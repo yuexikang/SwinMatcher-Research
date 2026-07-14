@@ -1,0 +1,201 @@
+scene,scene_pair,modality_pair,folder,id,image0,image1,matrix,matches,NCM,Pre,SR,RMSE,runtime_ms
+expanded_MRSI_dataset,5 optical-map,optical-map,000,swinmatcherbit/paper_test/expanded_MRSI_dataset/5_optical-map/000/01,00.PNG,01.PNG,01.npy,0,0,0.0,0,10.0,79.05240001855418
+expanded_MRSI_dataset,5 optical-map,optical-map,000,swinmatcherbit/paper_test/expanded_MRSI_dataset/5_optical-map/000/02,00.PNG,02.PNG,02.npy,0,0,0.0,0,10.0,103.15658099716529
+expanded_MRSI_dataset,5 optical-map,optical-map,000,swinmatcherbit/paper_test/expanded_MRSI_dataset/5_optical-map/000/03,00.PNG,03.PNG,03.npy,0,0,0.0,0,10.0,79.19641101034358
+expanded_MRSI_dataset,5 optical-map,optical-map,000,swinmatcherbit/paper_test/expanded_MRSI_dataset/5_optical-map/000/04,00.PNG,04.PNG,04.npy,0,0,0.0,0,10.0,65.2665889938362
+expanded_MRSI_dataset,5 optical-map,optical-map,000,swinmatcherbit/paper_test/expanded_MRSI_dataset/5_optical-map/000/05,00.PNG,05.PNG,05.npy,0,0,0.0,0,10.0,89.76473001530394
+expanded_MRSI_dataset,5 optical-map,optical-map,000,swinmatcherbit/paper_test/expanded_MRSI_dataset/5_optical-map/000/06,00.PNG,06.PNG,06.npy,0,0,0.0,0,10.0,90.55568499024957
+expanded_MRSI_dataset,5 optical-map,optical-map,000,swinmatcherbit/paper_test/expanded_MRSI_dataset/5_optical-map/000/07,00.PNG,07.PNG,07.npy,0,0,0.0,0,10.0,86.52828098274767
+expanded_MRSI_dataset,5 optical-map,optical-map,000,swinmatcherbit/paper_test/expanded_MRSI_dataset/5_optical-map/000/08,00.PNG,08.PNG,08.npy,0,0,0.0,0,10.0,49.301184015348554
+expanded_MRSI_dataset,5 optical-map,optical-map,000,swinmatcherbit/paper_test/expanded_MRSI_dataset/5_optical-map/000/09,00.PNG,09.PNG,09.npy,0,0,0.0,0,10.0,81.98673196602613
+expanded_MRSI_dataset,5 optical-map,optical-map,000,swinmatcherbit/paper_test/expanded_MRSI_dataset/5_optical-map/000/10,00.PNG,10.PNG,10.npy,0,0,0.0,0,10.0,325.77553001465276
+expanded_MRSI_dataset,5 optical-map,optical-map,001,swinmatcherbit/paper_test/expanded_MRSI_dataset/5_optical-map/001/01,00.PNG,01.PNG,01.npy,0,0,0.0,0,10.0,44.3102809949778
+expanded_MRSI_dataset,5 optical-map,optical-map,001,swinmatcherbit/paper_test/expanded_MRSI_dataset/5_optical-map/001/02,00.PNG,02.PNG,02.npy,0,0,0.0,0,10.0,84.62627901462838
+expanded_MRSI_dataset,5 optical-map,optical-map,001,swinmatcherbit/paper_test/expanded_MRSI_dataset/5_optical-map/001/03,00.PNG,03.PNG,03.npy,0,0,0.0,0,10.0,50.90889299754053
+expanded_MRSI_dataset,5 optical-map,optical-map,001,swinmatcherbit/paper_test/expanded_MRSI_dataset/5_optical-map/001/04,00.PNG,04.PNG,04.npy,0,0,0.0,0,10.0,91.18610998848453
+expanded_MRSI_dataset,5 optical-map,optical-map,001,swinmatcherbit/paper_test/expanded_MRSI_dataset/5_optical-map/001/05,00.PNG,05.PNG,05.npy,0,0,0.0,0,10.0,90.3734439634718
+expanded_MRSI_dataset,5 optical-map,optical-map,001,swinmatcherbit/paper_test/expanded_MRSI_dataset/5_optical-map/001/06,00.PNG,06.PNG,06.npy,0,0,0.0,0,10.0,79.76128300651908
+expanded_MRSI_dataset,5 optical-map,optical-map,001,swinmatcherbit/paper_test/expanded_MRSI_dataset/5_optical-map/001/07,00.PNG,07.PNG,07.npy,0,0,0.0,0,10.0,141.8640799820423
+expanded_MRSI_dataset,5 optical-map,optical-map,001,swinmatcherbit/paper_test/expanded_MRSI_dataset/5_optical-map/001/08,00.PNG,08.PNG,08.npy,0,0,0.0,0,10.0,77.2634309832938
+expanded_MRSI_dataset,5 optical-map,optical-map,001,swinmatcherbit/paper_test/expanded_MRSI_dataset/5_optical-map/001/09,00.PNG,09.PNG,09.npy,0,0,0.0,0,10.0,90.57423000922427
+expanded_MRSI_dataset,5 optical-map,optical-map,001,swinmatcherbit/paper_test/expanded_MRSI_dataset/5_optical-map/001/10,00.PNG,10.PNG,10.npy,0,0,0.0,0,10.0,48.52676996961236
+expanded_MRSI_dataset,5 optical-map,optical-map,002,swinmatcherbit/paper_test/expanded_MRSI_dataset/5_optical-map/002/01,00.PNG,01.PNG,01.npy,0,0,0.0,0,10.0,90.60624102130532
+expanded_MRSI_dataset,5 optical-map,optical-map,002,swinmatcherbit/paper_test/expanded_MRSI_dataset/5_optical-map/002/02,00.PNG,02.PNG,02.npy,0,0,0.0,0,10.0,90.0711760041304
+expanded_MRSI_dataset,5 optical-map,optical-map,002,swinmatcherbit/paper_test/expanded_MRSI_dataset/5_optical-map/002/03,00.PNG,03.PNG,03.npy,0,0,0.0,0,10.0,287.75344899622723
+expanded_MRSI_dataset,5 optical-map,optical-map,002,swinmatcherbit/paper_test/expanded_MRSI_dataset/5_optical-map/002/04,00.PNG,04.PNG,04.npy,0,0,0.0,0,10.0,292.0206830021925
+expanded_MRSI_dataset,5 optical-map,optical-map,002,swinmatcherbit/paper_test/expanded_MRSI_dataset/5_optical-map/002/05,00.PNG,05.PNG,05.npy,0,0,0.0,0,10.0,90.74838797096163
+expanded_MRSI_dataset,5 optical-map,optical-map,002,swinmatcherbit/paper_test/expanded_MRSI_dataset/5_optical-map/002/06,00.PNG,06.PNG,06.npy,0,0,0.0,0,10.0,80.09661198593676
+expanded_MRSI_dataset,5 optical-map,optical-map,002,swinmatcherbit/paper_test/expanded_MRSI_dataset/5_optical-map/002/07,00.PNG,07.PNG,07.npy,0,0,0.0,0,10.0,90.53373499773443
+expanded_MRSI_dataset,5 optical-map,optical-map,002,swinmatcherbit/paper_test/expanded_MRSI_dataset/5_optical-map/002/08,00.PNG,08.PNG,08.npy,0,0,0.0,0,10.0,35.98740900633857
+expanded_MRSI_dataset,5 optical-map,optical-map,002,swinmatcherbit/paper_test/expanded_MRSI_dataset/5_optical-map/002/09,00.PNG,09.PNG,09.npy,0,0,0.0,0,10.0,36.46401397418231
+expanded_MRSI_dataset,5 optical-map,optical-map,002,swinmatcherbit/paper_test/expanded_MRSI_dataset/5_optical-map/002/10,00.PNG,10.PNG,10.npy,0,0,0.0,0,10.0,283.27553800772876
+expanded_MRSI_dataset,5 optical-map,optical-map,003,swinmatcherbit/paper_test/expanded_MRSI_dataset/5_optical-map/003/01,00.PNG,01.PNG,01.npy,0,0,0.0,0,10.0,79.34464997379109
+expanded_MRSI_dataset,5 optical-map,optical-map,003,swinmatcherbit/paper_test/expanded_MRSI_dataset/5_optical-map/003/02,00.PNG,02.PNG,02.npy,0,0,0.0,0,10.0,84.5413799979724
+expanded_MRSI_dataset,5 optical-map,optical-map,003,swinmatcherbit/paper_test/expanded_MRSI_dataset/5_optical-map/003/03,00.PNG,03.PNG,03.npy,0,0,0.0,0,10.0,47.59014101000503
+expanded_MRSI_dataset,5 optical-map,optical-map,003,swinmatcherbit/paper_test/expanded_MRSI_dataset/5_optical-map/003/04,00.PNG,04.PNG,04.npy,0,0,0.0,0,10.0,44.020136003382504
+expanded_MRSI_dataset,5 optical-map,optical-map,003,swinmatcherbit/paper_test/expanded_MRSI_dataset/5_optical-map/003/05,00.PNG,05.PNG,05.npy,0,0,0.0,0,10.0,49.513583013322204
+expanded_MRSI_dataset,5 optical-map,optical-map,003,swinmatcherbit/paper_test/expanded_MRSI_dataset/5_optical-map/003/06,00.PNG,06.PNG,06.npy,0,0,0.0,0,10.0,285.6851749820635
+expanded_MRSI_dataset,5 optical-map,optical-map,003,swinmatcherbit/paper_test/expanded_MRSI_dataset/5_optical-map/003/07,00.PNG,07.PNG,07.npy,0,0,0.0,0,10.0,48.48236602265388
+expanded_MRSI_dataset,5 optical-map,optical-map,003,swinmatcherbit/paper_test/expanded_MRSI_dataset/5_optical-map/003/08,00.PNG,08.PNG,08.npy,0,0,0.0,0,10.0,51.057794014923275
+expanded_MRSI_dataset,5 optical-map,optical-map,003,swinmatcherbit/paper_test/expanded_MRSI_dataset/5_optical-map/003/09,00.PNG,09.PNG,09.npy,0,0,0.0,0,10.0,36.232268961612135
+expanded_MRSI_dataset,5 optical-map,optical-map,003,swinmatcherbit/paper_test/expanded_MRSI_dataset/5_optical-map/003/10,00.PNG,10.PNG,10.npy,0,0,0.0,0,10.0,90.70291300304234
+expanded_MRSI_dataset,5 optical-map,optical-map,004,swinmatcherbit/paper_test/expanded_MRSI_dataset/5_optical-map/004/01,00.PNG,01.PNG,01.npy,0,0,0.0,0,10.0,65.79304800834507
+expanded_MRSI_dataset,5 optical-map,optical-map,004,swinmatcherbit/paper_test/expanded_MRSI_dataset/5_optical-map/004/02,00.PNG,02.PNG,02.npy,0,0,0.0,0,10.0,247.3704040166922
+expanded_MRSI_dataset,5 optical-map,optical-map,004,swinmatcherbit/paper_test/expanded_MRSI_dataset/5_optical-map/004/03,00.PNG,03.PNG,03.npy,0,0,0.0,0,10.0,49.80186402099207
+expanded_MRSI_dataset,5 optical-map,optical-map,004,swinmatcherbit/paper_test/expanded_MRSI_dataset/5_optical-map/004/04,00.PNG,04.PNG,04.npy,0,0,0.0,0,10.0,87.1304830070585
+expanded_MRSI_dataset,5 optical-map,optical-map,004,swinmatcherbit/paper_test/expanded_MRSI_dataset/5_optical-map/004/05,00.PNG,05.PNG,05.npy,0,0,0.0,0,10.0,90.09043202968314
+expanded_MRSI_dataset,5 optical-map,optical-map,004,swinmatcherbit/paper_test/expanded_MRSI_dataset/5_optical-map/004/06,00.PNG,06.PNG,06.npy,0,0,0.0,0,10.0,77.90761097567156
+expanded_MRSI_dataset,5 optical-map,optical-map,004,swinmatcherbit/paper_test/expanded_MRSI_dataset/5_optical-map/004/07,00.PNG,07.PNG,07.npy,0,0,0.0,0,10.0,90.54328198544681
+expanded_MRSI_dataset,5 optical-map,optical-map,004,swinmatcherbit/paper_test/expanded_MRSI_dataset/5_optical-map/004/08,00.PNG,08.PNG,08.npy,0,0,0.0,0,10.0,90.58115299558267
+expanded_MRSI_dataset,5 optical-map,optical-map,004,swinmatcherbit/paper_test/expanded_MRSI_dataset/5_optical-map/004/09,00.PNG,09.PNG,09.npy,0,0,0.0,0,10.0,90.72723699500784
+expanded_MRSI_dataset,5 optical-map,optical-map,004,swinmatcherbit/paper_test/expanded_MRSI_dataset/5_optical-map/004/10,00.PNG,10.PNG,10.npy,0,0,0.0,0,10.0,79.94943502126262
+expanded_MRSI_dataset,5 optical-map,optical-map,005,swinmatcherbit/paper_test/expanded_MRSI_dataset/5_optical-map/005/01,00.PNG,01.PNG,01.npy,0,0,0.0,0,10.0,313.66721796803176
+expanded_MRSI_dataset,5 optical-map,optical-map,005,swinmatcherbit/paper_test/expanded_MRSI_dataset/5_optical-map/005/02,00.PNG,02.PNG,02.npy,0,0,0.0,0,10.0,90.63012502156198
+expanded_MRSI_dataset,5 optical-map,optical-map,005,swinmatcherbit/paper_test/expanded_MRSI_dataset/5_optical-map/005/03,00.PNG,03.PNG,03.npy,0,0,0.0,0,10.0,89.90724699106067
+expanded_MRSI_dataset,5 optical-map,optical-map,005,swinmatcherbit/paper_test/expanded_MRSI_dataset/5_optical-map/005/04,00.PNG,04.PNG,04.npy,0,0,0.0,0,10.0,45.77797697857022
+expanded_MRSI_dataset,5 optical-map,optical-map,005,swinmatcherbit/paper_test/expanded_MRSI_dataset/5_optical-map/005/05,00.PNG,05.PNG,05.npy,0,0,0.0,0,10.0,406.38124698307365
+expanded_MRSI_dataset,5 optical-map,optical-map,005,swinmatcherbit/paper_test/expanded_MRSI_dataset/5_optical-map/005/06,00.PNG,06.PNG,06.npy,0,0,0.0,0,10.0,91.02067799540237
+expanded_MRSI_dataset,5 optical-map,optical-map,005,swinmatcherbit/paper_test/expanded_MRSI_dataset/5_optical-map/005/07,00.PNG,07.PNG,07.npy,0,0,0.0,0,10.0,56.24249100219458
+expanded_MRSI_dataset,5 optical-map,optical-map,005,swinmatcherbit/paper_test/expanded_MRSI_dataset/5_optical-map/005/08,00.PNG,08.PNG,08.npy,0,0,0.0,0,10.0,90.6503830337897
+expanded_MRSI_dataset,5 optical-map,optical-map,005,swinmatcherbit/paper_test/expanded_MRSI_dataset/5_optical-map/005/09,00.PNG,09.PNG,09.npy,0,0,0.0,0,10.0,81.42683102050796
+expanded_MRSI_dataset,5 optical-map,optical-map,005,swinmatcherbit/paper_test/expanded_MRSI_dataset/5_optical-map/005/10,00.PNG,10.PNG,10.npy,0,0,0.0,0,10.0,46.015071973670274
+expanded_MRSI_dataset,5 optical-map,optical-map,006,swinmatcherbit/paper_test/expanded_MRSI_dataset/5_optical-map/006/01,00.PNG,01.PNG,01.npy,0,0,0.0,0,10.0,293.10799500672147
+expanded_MRSI_dataset,5 optical-map,optical-map,006,swinmatcherbit/paper_test/expanded_MRSI_dataset/5_optical-map/006/02,00.PNG,02.PNG,02.npy,0,0,0.0,0,10.0,89.83487100340426
+expanded_MRSI_dataset,5 optical-map,optical-map,006,swinmatcherbit/paper_test/expanded_MRSI_dataset/5_optical-map/006/03,00.PNG,03.PNG,03.npy,0,0,0.0,0,10.0,44.360144005622715
+expanded_MRSI_dataset,5 optical-map,optical-map,006,swinmatcherbit/paper_test/expanded_MRSI_dataset/5_optical-map/006/04,00.PNG,04.PNG,04.npy,0,0,0.0,0,10.0,82.18367100926116
+expanded_MRSI_dataset,5 optical-map,optical-map,006,swinmatcherbit/paper_test/expanded_MRSI_dataset/5_optical-map/006/05,00.PNG,05.PNG,05.npy,0,0,0.0,0,10.0,77.65631895745173
+expanded_MRSI_dataset,5 optical-map,optical-map,006,swinmatcherbit/paper_test/expanded_MRSI_dataset/5_optical-map/006/06,00.PNG,06.PNG,06.npy,0,0,0.0,0,10.0,47.4166150088422
+expanded_MRSI_dataset,5 optical-map,optical-map,006,swinmatcherbit/paper_test/expanded_MRSI_dataset/5_optical-map/006/07,00.PNG,07.PNG,07.npy,0,0,0.0,0,10.0,104.14498799946159
+expanded_MRSI_dataset,5 optical-map,optical-map,006,swinmatcherbit/paper_test/expanded_MRSI_dataset/5_optical-map/006/08,00.PNG,08.PNG,08.npy,0,0,0.0,0,10.0,91.01377602200955
+expanded_MRSI_dataset,5 optical-map,optical-map,006,swinmatcherbit/paper_test/expanded_MRSI_dataset/5_optical-map/006/09,00.PNG,09.PNG,09.npy,0,0,0.0,0,10.0,36.29108902532607
+expanded_MRSI_dataset,5 optical-map,optical-map,006,swinmatcherbit/paper_test/expanded_MRSI_dataset/5_optical-map/006/10,00.PNG,10.PNG,10.npy,0,0,0.0,0,10.0,82.41606800584123
+expanded_MRSI_dataset,5 optical-map,optical-map,007,swinmatcherbit/paper_test/expanded_MRSI_dataset/5_optical-map/007/01,00.PNG,01.PNG,01.npy,0,0,0.0,0,10.0,79.48492304421961
+expanded_MRSI_dataset,5 optical-map,optical-map,007,swinmatcherbit/paper_test/expanded_MRSI_dataset/5_optical-map/007/02,00.PNG,02.PNG,02.npy,0,0,0.0,0,10.0,145.14779701130465
+expanded_MRSI_dataset,5 optical-map,optical-map,007,swinmatcherbit/paper_test/expanded_MRSI_dataset/5_optical-map/007/03,00.PNG,03.PNG,03.npy,0,0,0.0,0,10.0,46.78139102179557
+expanded_MRSI_dataset,5 optical-map,optical-map,007,swinmatcherbit/paper_test/expanded_MRSI_dataset/5_optical-map/007/04,00.PNG,04.PNG,04.npy,0,0,0.0,0,10.0,79.48916096938774
+expanded_MRSI_dataset,5 optical-map,optical-map,007,swinmatcherbit/paper_test/expanded_MRSI_dataset/5_optical-map/007/05,00.PNG,05.PNG,05.npy,0,0,0.0,0,10.0,45.590905006974936
+expanded_MRSI_dataset,5 optical-map,optical-map,007,swinmatcherbit/paper_test/expanded_MRSI_dataset/5_optical-map/007/06,00.PNG,06.PNG,06.npy,0,0,0.0,0,10.0,65.59426395688206
+expanded_MRSI_dataset,5 optical-map,optical-map,007,swinmatcherbit/paper_test/expanded_MRSI_dataset/5_optical-map/007/07,00.PNG,07.PNG,07.npy,0,0,0.0,0,10.0,125.8344030356966
+expanded_MRSI_dataset,5 optical-map,optical-map,007,swinmatcherbit/paper_test/expanded_MRSI_dataset/5_optical-map/007/08,00.PNG,08.PNG,08.npy,0,0,0.0,0,10.0,90.22253996226937
+expanded_MRSI_dataset,5 optical-map,optical-map,007,swinmatcherbit/paper_test/expanded_MRSI_dataset/5_optical-map/007/09,00.PNG,09.PNG,09.npy,0,0,0.0,0,10.0,42.22250898601487
+expanded_MRSI_dataset,5 optical-map,optical-map,007,swinmatcherbit/paper_test/expanded_MRSI_dataset/5_optical-map/007/10,00.PNG,10.PNG,10.npy,0,0,0.0,0,10.0,61.538386973552406
+expanded_MRSI_dataset,5 optical-map,optical-map,008,swinmatcherbit/paper_test/expanded_MRSI_dataset/5_optical-map/008/01,00.PNG,01.PNG,01.npy,0,0,0.0,0,10.0,90.29357298277318
+expanded_MRSI_dataset,5 optical-map,optical-map,008,swinmatcherbit/paper_test/expanded_MRSI_dataset/5_optical-map/008/02,00.PNG,02.PNG,02.npy,0,0,0.0,0,10.0,158.6625890340656
+expanded_MRSI_dataset,5 optical-map,optical-map,008,swinmatcherbit/paper_test/expanded_MRSI_dataset/5_optical-map/008/03,00.PNG,03.PNG,03.npy,0,0,0.0,0,10.0,80.1541400142014
+expanded_MRSI_dataset,5 optical-map,optical-map,008,swinmatcherbit/paper_test/expanded_MRSI_dataset/5_optical-map/008/04,00.PNG,04.PNG,04.npy,0,0,0.0,0,10.0,76.5138630522415
+expanded_MRSI_dataset,5 optical-map,optical-map,008,swinmatcherbit/paper_test/expanded_MRSI_dataset/5_optical-map/008/05,00.PNG,05.PNG,05.npy,0,0,0.0,0,10.0,163.94451900850981
+expanded_MRSI_dataset,5 optical-map,optical-map,008,swinmatcherbit/paper_test/expanded_MRSI_dataset/5_optical-map/008/06,00.PNG,06.PNG,06.npy,0,0,0.0,0,10.0,36.12613002769649
+expanded_MRSI_dataset,5 optical-map,optical-map,008,swinmatcherbit/paper_test/expanded_MRSI_dataset/5_optical-map/008/07,00.PNG,07.PNG,07.npy,0,0,0.0,0,10.0,47.938093019183725
+expanded_MRSI_dataset,5 optical-map,optical-map,008,swinmatcherbit/paper_test/expanded_MRSI_dataset/5_optical-map/008/08,00.PNG,08.PNG,08.npy,0,0,0.0,0,10.0,84.7895959741436
+expanded_MRSI_dataset,5 optical-map,optical-map,008,swinmatcherbit/paper_test/expanded_MRSI_dataset/5_optical-map/008/09,00.PNG,09.PNG,09.npy,0,0,0.0,0,10.0,58.12523700296879
+expanded_MRSI_dataset,5 optical-map,optical-map,008,swinmatcherbit/paper_test/expanded_MRSI_dataset/5_optical-map/008/10,00.PNG,10.PNG,10.npy,0,0,0.0,0,10.0,298.2737770071253
+expanded_MRSI_dataset,5 optical-map,optical-map,009,swinmatcherbit/paper_test/expanded_MRSI_dataset/5_optical-map/009/01,00.PNG,01.PNG,01.npy,0,0,0.0,0,10.0,90.39914095774293
+expanded_MRSI_dataset,5 optical-map,optical-map,009,swinmatcherbit/paper_test/expanded_MRSI_dataset/5_optical-map/009/02,00.PNG,02.PNG,02.npy,0,0,0.0,0,10.0,80.0446739885956
+expanded_MRSI_dataset,5 optical-map,optical-map,009,swinmatcherbit/paper_test/expanded_MRSI_dataset/5_optical-map/009/03,00.PNG,03.PNG,03.npy,0,0,0.0,0,10.0,47.821425017900765
+expanded_MRSI_dataset,5 optical-map,optical-map,009,swinmatcherbit/paper_test/expanded_MRSI_dataset/5_optical-map/009/04,00.PNG,04.PNG,04.npy,0,0,0.0,0,10.0,364.00643101660535
+expanded_MRSI_dataset,5 optical-map,optical-map,009,swinmatcherbit/paper_test/expanded_MRSI_dataset/5_optical-map/009/05,00.PNG,05.PNG,05.npy,0,0,0.0,0,10.0,47.993478015996516
+expanded_MRSI_dataset,5 optical-map,optical-map,009,swinmatcherbit/paper_test/expanded_MRSI_dataset/5_optical-map/009/06,00.PNG,06.PNG,06.npy,0,0,0.0,0,10.0,339.9779120227322
+expanded_MRSI_dataset,5 optical-map,optical-map,009,swinmatcherbit/paper_test/expanded_MRSI_dataset/5_optical-map/009/07,00.PNG,07.PNG,07.npy,0,0,0.0,0,10.0,61.05358700733632
+expanded_MRSI_dataset,5 optical-map,optical-map,009,swinmatcherbit/paper_test/expanded_MRSI_dataset/5_optical-map/009/08,00.PNG,08.PNG,08.npy,0,0,0.0,0,10.0,36.289685987867415
+expanded_MRSI_dataset,5 optical-map,optical-map,009,swinmatcherbit/paper_test/expanded_MRSI_dataset/5_optical-map/009/09,00.PNG,09.PNG,09.npy,0,0,0.0,0,10.0,39.31220300728455
+expanded_MRSI_dataset,5 optical-map,optical-map,009,swinmatcherbit/paper_test/expanded_MRSI_dataset/5_optical-map/009/10,00.PNG,10.PNG,10.npy,0,0,0.0,0,10.0,90.25546099292114
+proposed_test_dataset,scene4_Optical-Map,optical-map,000,swinmatcherbit/paper_test/proposed_test_dataset/scene4_Optical-Map/000/01,00.PNG,01.PNG,01.npy,0,0,0.0,0,10.0,119.56115899374709
+proposed_test_dataset,scene4_Optical-Map,optical-map,000,swinmatcherbit/paper_test/proposed_test_dataset/scene4_Optical-Map/000/02,00.PNG,02.PNG,02.npy,0,0,0.0,0,10.0,91.20406198780984
+proposed_test_dataset,scene4_Optical-Map,optical-map,000,swinmatcherbit/paper_test/proposed_test_dataset/scene4_Optical-Map/000/03,00.PNG,03.PNG,03.npy,0,0,0.0,0,10.0,36.12646000692621
+proposed_test_dataset,scene4_Optical-Map,optical-map,000,swinmatcherbit/paper_test/proposed_test_dataset/scene4_Optical-Map/000/04,00.PNG,04.PNG,04.npy,0,0,0.0,0,10.0,91.28695697290823
+proposed_test_dataset,scene4_Optical-Map,optical-map,000,swinmatcherbit/paper_test/proposed_test_dataset/scene4_Optical-Map/000/05,00.PNG,05.PNG,05.npy,0,0,0.0,0,10.0,35.84739501820877
+proposed_test_dataset,scene4_Optical-Map,optical-map,000,swinmatcherbit/paper_test/proposed_test_dataset/scene4_Optical-Map/000/06,00.PNG,06.PNG,06.npy,0,0,0.0,0,10.0,58.89735498931259
+proposed_test_dataset,scene4_Optical-Map,optical-map,000,swinmatcherbit/paper_test/proposed_test_dataset/scene4_Optical-Map/000/07,00.PNG,07.PNG,07.npy,0,0,0.0,0,10.0,81.24083903385326
+proposed_test_dataset,scene4_Optical-Map,optical-map,000,swinmatcherbit/paper_test/proposed_test_dataset/scene4_Optical-Map/000/08,00.PNG,08.PNG,08.npy,0,0,0.0,0,10.0,36.05391300516203
+proposed_test_dataset,scene4_Optical-Map,optical-map,000,swinmatcherbit/paper_test/proposed_test_dataset/scene4_Optical-Map/000/09,00.PNG,09.PNG,09.npy,0,0,0.0,0,10.0,60.32824300928041
+proposed_test_dataset,scene4_Optical-Map,optical-map,000,swinmatcherbit/paper_test/proposed_test_dataset/scene4_Optical-Map/000/10,00.PNG,10.PNG,10.npy,0,0,0.0,0,10.0,43.61180803971365
+proposed_test_dataset,scene4_Optical-Map,optical-map,001,swinmatcherbit/paper_test/proposed_test_dataset/scene4_Optical-Map/001/01,00.PNG,01.PNG,01.npy,0,0,0.0,0,10.0,36.3570720073767
+proposed_test_dataset,scene4_Optical-Map,optical-map,001,swinmatcherbit/paper_test/proposed_test_dataset/scene4_Optical-Map/001/02,00.PNG,02.PNG,02.npy,0,0,0.0,0,10.0,197.26348301628605
+proposed_test_dataset,scene4_Optical-Map,optical-map,001,swinmatcherbit/paper_test/proposed_test_dataset/scene4_Optical-Map/001/03,00.PNG,03.PNG,03.npy,0,0,0.0,0,10.0,90.92891402542591
+proposed_test_dataset,scene4_Optical-Map,optical-map,001,swinmatcherbit/paper_test/proposed_test_dataset/scene4_Optical-Map/001/04,00.PNG,04.PNG,04.npy,0,0,0.0,0,10.0,36.02500900160521
+proposed_test_dataset,scene4_Optical-Map,optical-map,001,swinmatcherbit/paper_test/proposed_test_dataset/scene4_Optical-Map/001/05,00.PNG,05.PNG,05.npy,0,0,0.0,0,10.0,36.205547978170216
+proposed_test_dataset,scene4_Optical-Map,optical-map,001,swinmatcherbit/paper_test/proposed_test_dataset/scene4_Optical-Map/001/06,00.PNG,06.PNG,06.npy,0,0,0.0,0,10.0,71.7538219760172
+proposed_test_dataset,scene4_Optical-Map,optical-map,001,swinmatcherbit/paper_test/proposed_test_dataset/scene4_Optical-Map/001/07,00.PNG,07.PNG,07.npy,0,0,0.0,0,10.0,259.3202820280567
+proposed_test_dataset,scene4_Optical-Map,optical-map,001,swinmatcherbit/paper_test/proposed_test_dataset/scene4_Optical-Map/001/08,00.PNG,08.PNG,08.npy,0,0,0.0,0,10.0,36.426383012440056
+proposed_test_dataset,scene4_Optical-Map,optical-map,001,swinmatcherbit/paper_test/proposed_test_dataset/scene4_Optical-Map/001/09,00.PNG,09.PNG,09.npy,0,0,0.0,0,10.0,197.80975801404566
+proposed_test_dataset,scene4_Optical-Map,optical-map,001,swinmatcherbit/paper_test/proposed_test_dataset/scene4_Optical-Map/001/10,00.PNG,10.PNG,10.npy,0,0,0.0,0,10.0,37.09570999490097
+proposed_test_dataset,scene4_Optical-Map,optical-map,002,swinmatcherbit/paper_test/proposed_test_dataset/scene4_Optical-Map/002/01,00.PNG,01.PNG,01.npy,0,0,0.0,0,10.0,35.842776007484645
+proposed_test_dataset,scene4_Optical-Map,optical-map,002,swinmatcherbit/paper_test/proposed_test_dataset/scene4_Optical-Map/002/02,00.PNG,02.PNG,02.npy,0,0,0.0,0,10.0,37.00204304186627
+proposed_test_dataset,scene4_Optical-Map,optical-map,002,swinmatcherbit/paper_test/proposed_test_dataset/scene4_Optical-Map/002/03,00.PNG,03.PNG,03.npy,0,0,0.0,0,10.0,265.85638796677813
+proposed_test_dataset,scene4_Optical-Map,optical-map,002,swinmatcherbit/paper_test/proposed_test_dataset/scene4_Optical-Map/002/04,00.PNG,04.PNG,04.npy,0,0,0.0,0,10.0,35.82889097742736
+proposed_test_dataset,scene4_Optical-Map,optical-map,002,swinmatcherbit/paper_test/proposed_test_dataset/scene4_Optical-Map/002/05,00.PNG,05.PNG,05.npy,0,0,0.0,0,10.0,36.864435009192675
+proposed_test_dataset,scene4_Optical-Map,optical-map,002,swinmatcherbit/paper_test/proposed_test_dataset/scene4_Optical-Map/002/06,00.PNG,06.PNG,06.npy,0,0,0.0,0,10.0,36.72942199045792
+proposed_test_dataset,scene4_Optical-Map,optical-map,002,swinmatcherbit/paper_test/proposed_test_dataset/scene4_Optical-Map/002/07,00.PNG,07.PNG,07.npy,0,0,0.0,0,10.0,37.18979598488659
+proposed_test_dataset,scene4_Optical-Map,optical-map,002,swinmatcherbit/paper_test/proposed_test_dataset/scene4_Optical-Map/002/08,00.PNG,08.PNG,08.npy,0,0,0.0,0,10.0,35.92507098801434
+proposed_test_dataset,scene4_Optical-Map,optical-map,002,swinmatcherbit/paper_test/proposed_test_dataset/scene4_Optical-Map/002/09,00.PNG,09.PNG,09.npy,0,0,0.0,0,10.0,89.82111298246309
+proposed_test_dataset,scene4_Optical-Map,optical-map,002,swinmatcherbit/paper_test/proposed_test_dataset/scene4_Optical-Map/002/10,00.PNG,10.PNG,10.npy,0,0,0.0,0,10.0,35.736076009925455
+proposed_test_dataset,scene4_Optical-Map,optical-map,003,swinmatcherbit/paper_test/proposed_test_dataset/scene4_Optical-Map/003/01,00.PNG,01.PNG,01.npy,0,0,0.0,0,10.0,187.92970199137926
+proposed_test_dataset,scene4_Optical-Map,optical-map,003,swinmatcherbit/paper_test/proposed_test_dataset/scene4_Optical-Map/003/02,00.PNG,02.PNG,02.npy,0,0,0.0,0,10.0,78.83735501673073
+proposed_test_dataset,scene4_Optical-Map,optical-map,003,swinmatcherbit/paper_test/proposed_test_dataset/scene4_Optical-Map/003/03,00.PNG,03.PNG,03.npy,0,0,0.0,0,10.0,90.33263399032876
+proposed_test_dataset,scene4_Optical-Map,optical-map,003,swinmatcherbit/paper_test/proposed_test_dataset/scene4_Optical-Map/003/04,00.PNG,04.PNG,04.npy,0,0,0.0,0,10.0,196.66885602055117
+proposed_test_dataset,scene4_Optical-Map,optical-map,003,swinmatcherbit/paper_test/proposed_test_dataset/scene4_Optical-Map/003/05,00.PNG,05.PNG,05.npy,0,0,0.0,0,10.0,229.34013500344008
+proposed_test_dataset,scene4_Optical-Map,optical-map,003,swinmatcherbit/paper_test/proposed_test_dataset/scene4_Optical-Map/003/06,00.PNG,06.PNG,06.npy,0,0,0.0,0,10.0,35.91825801413506
+proposed_test_dataset,scene4_Optical-Map,optical-map,003,swinmatcherbit/paper_test/proposed_test_dataset/scene4_Optical-Map/003/07,00.PNG,07.PNG,07.npy,0,0,0.0,0,10.0,36.2159869982861
+proposed_test_dataset,scene4_Optical-Map,optical-map,003,swinmatcherbit/paper_test/proposed_test_dataset/scene4_Optical-Map/003/08,00.PNG,08.PNG,08.npy,0,0,0.0,0,10.0,292.9628259735182
+proposed_test_dataset,scene4_Optical-Map,optical-map,003,swinmatcherbit/paper_test/proposed_test_dataset/scene4_Optical-Map/003/09,00.PNG,09.PNG,09.npy,0,0,0.0,0,10.0,36.00885899504647
+proposed_test_dataset,scene4_Optical-Map,optical-map,003,swinmatcherbit/paper_test/proposed_test_dataset/scene4_Optical-Map/003/10,00.PNG,10.PNG,10.npy,0,0,0.0,0,10.0,47.79461299767718
+proposed_test_dataset,scene4_Optical-Map,optical-map,004,swinmatcherbit/paper_test/proposed_test_dataset/scene4_Optical-Map/004/01,00.PNG,01.PNG,01.npy,0,0,0.0,0,10.0,233.1894559902139
+proposed_test_dataset,scene4_Optical-Map,optical-map,004,swinmatcherbit/paper_test/proposed_test_dataset/scene4_Optical-Map/004/02,00.PNG,02.PNG,02.npy,0,0,0.0,0,10.0,90.73417901527137
+proposed_test_dataset,scene4_Optical-Map,optical-map,004,swinmatcherbit/paper_test/proposed_test_dataset/scene4_Optical-Map/004/03,00.PNG,03.PNG,03.npy,0,0,0.0,0,10.0,90.60810203664005
+proposed_test_dataset,scene4_Optical-Map,optical-map,004,swinmatcherbit/paper_test/proposed_test_dataset/scene4_Optical-Map/004/04,00.PNG,04.PNG,04.npy,0,0,0.0,0,10.0,76.03961095446721
+proposed_test_dataset,scene4_Optical-Map,optical-map,004,swinmatcherbit/paper_test/proposed_test_dataset/scene4_Optical-Map/004/05,00.PNG,05.PNG,05.npy,0,0,0.0,0,10.0,77.35436997609213
+proposed_test_dataset,scene4_Optical-Map,optical-map,004,swinmatcherbit/paper_test/proposed_test_dataset/scene4_Optical-Map/004/06,00.PNG,06.PNG,06.npy,0,0,0.0,0,10.0,36.140786949545145
+proposed_test_dataset,scene4_Optical-Map,optical-map,004,swinmatcherbit/paper_test/proposed_test_dataset/scene4_Optical-Map/004/07,00.PNG,07.PNG,07.npy,0,0,0.0,0,10.0,256.617876002565
+proposed_test_dataset,scene4_Optical-Map,optical-map,004,swinmatcherbit/paper_test/proposed_test_dataset/scene4_Optical-Map/004/08,00.PNG,08.PNG,08.npy,0,0,0.0,0,10.0,89.97812902089208
+proposed_test_dataset,scene4_Optical-Map,optical-map,004,swinmatcherbit/paper_test/proposed_test_dataset/scene4_Optical-Map/004/09,00.PNG,09.PNG,09.npy,0,0,0.0,0,10.0,46.87569697853178
+proposed_test_dataset,scene4_Optical-Map,optical-map,004,swinmatcherbit/paper_test/proposed_test_dataset/scene4_Optical-Map/004/10,00.PNG,10.PNG,10.npy,0,0,0.0,0,10.0,80.59122896520421
+proposed_test_dataset,scene4_Optical-Map,optical-map,005,swinmatcherbit/paper_test/proposed_test_dataset/scene4_Optical-Map/005/01,00.PNG,01.PNG,01.npy,0,0,0.0,0,10.0,81.2827079789713
+proposed_test_dataset,scene4_Optical-Map,optical-map,005,swinmatcherbit/paper_test/proposed_test_dataset/scene4_Optical-Map/005/02,00.PNG,02.PNG,02.npy,0,0,0.0,0,10.0,201.097714016214
+proposed_test_dataset,scene4_Optical-Map,optical-map,005,swinmatcherbit/paper_test/proposed_test_dataset/scene4_Optical-Map/005/03,00.PNG,03.PNG,03.npy,0,0,0.0,0,10.0,343.13230897532776
+proposed_test_dataset,scene4_Optical-Map,optical-map,005,swinmatcherbit/paper_test/proposed_test_dataset/scene4_Optical-Map/005/04,00.PNG,04.PNG,04.npy,0,0,0.0,0,10.0,54.58382400684059
+proposed_test_dataset,scene4_Optical-Map,optical-map,005,swinmatcherbit/paper_test/proposed_test_dataset/scene4_Optical-Map/005/05,00.PNG,05.PNG,05.npy,0,0,0.0,0,10.0,73.03513801889494
+proposed_test_dataset,scene4_Optical-Map,optical-map,005,swinmatcherbit/paper_test/proposed_test_dataset/scene4_Optical-Map/005/06,00.PNG,06.PNG,06.npy,0,0,0.0,0,10.0,78.93526903353631
+proposed_test_dataset,scene4_Optical-Map,optical-map,005,swinmatcherbit/paper_test/proposed_test_dataset/scene4_Optical-Map/005/07,00.PNG,07.PNG,07.npy,0,0,0.0,0,10.0,47.090781037695706
+proposed_test_dataset,scene4_Optical-Map,optical-map,005,swinmatcherbit/paper_test/proposed_test_dataset/scene4_Optical-Map/005/08,00.PNG,08.PNG,08.npy,0,0,0.0,0,10.0,90.0154989794828
+proposed_test_dataset,scene4_Optical-Map,optical-map,005,swinmatcherbit/paper_test/proposed_test_dataset/scene4_Optical-Map/005/09,00.PNG,09.PNG,09.npy,0,0,0.0,0,10.0,90.42268397752196
+proposed_test_dataset,scene4_Optical-Map,optical-map,005,swinmatcherbit/paper_test/proposed_test_dataset/scene4_Optical-Map/005/10,00.PNG,10.PNG,10.npy,0,0,0.0,0,10.0,90.55133495712653
+proposed_test_dataset,scene4_Optical-Map,optical-map,006,swinmatcherbit/paper_test/proposed_test_dataset/scene4_Optical-Map/006/01,00.PNG,01.PNG,01.npy,0,0,0.0,0,10.0,51.434340013656765
+proposed_test_dataset,scene4_Optical-Map,optical-map,006,swinmatcherbit/paper_test/proposed_test_dataset/scene4_Optical-Map/006/02,00.PNG,02.PNG,02.npy,0,0,0.0,0,10.0,45.412629027850926
+proposed_test_dataset,scene4_Optical-Map,optical-map,006,swinmatcherbit/paper_test/proposed_test_dataset/scene4_Optical-Map/006/03,00.PNG,03.PNG,03.npy,0,0,0.0,0,10.0,189.71726897871122
+proposed_test_dataset,scene4_Optical-Map,optical-map,006,swinmatcherbit/paper_test/proposed_test_dataset/scene4_Optical-Map/006/04,00.PNG,04.PNG,04.npy,0,0,0.0,0,10.0,90.19221097696573
+proposed_test_dataset,scene4_Optical-Map,optical-map,006,swinmatcherbit/paper_test/proposed_test_dataset/scene4_Optical-Map/006/05,00.PNG,05.PNG,05.npy,0,0,0.0,0,10.0,170.45356100425124
+proposed_test_dataset,scene4_Optical-Map,optical-map,006,swinmatcherbit/paper_test/proposed_test_dataset/scene4_Optical-Map/006/06,00.PNG,06.PNG,06.npy,0,0,0.0,0,10.0,43.67328400257975
+proposed_test_dataset,scene4_Optical-Map,optical-map,006,swinmatcherbit/paper_test/proposed_test_dataset/scene4_Optical-Map/006/07,00.PNG,07.PNG,07.npy,0,0,0.0,0,10.0,46.55617801472545
+proposed_test_dataset,scene4_Optical-Map,optical-map,006,swinmatcherbit/paper_test/proposed_test_dataset/scene4_Optical-Map/006/08,00.PNG,08.PNG,08.npy,0,0,0.0,0,10.0,86.15002903388813
+proposed_test_dataset,scene4_Optical-Map,optical-map,006,swinmatcherbit/paper_test/proposed_test_dataset/scene4_Optical-Map/006/09,00.PNG,09.PNG,09.npy,0,0,0.0,0,10.0,90.52241098834202
+proposed_test_dataset,scene4_Optical-Map,optical-map,006,swinmatcherbit/paper_test/proposed_test_dataset/scene4_Optical-Map/006/10,00.PNG,10.PNG,10.npy,0,0,0.0,0,10.0,90.57357697747648
+proposed_test_dataset,scene4_Optical-Map,optical-map,007,swinmatcherbit/paper_test/proposed_test_dataset/scene4_Optical-Map/007/01,00.PNG,01.PNG,01.npy,0,0,0.0,0,10.0,90.47140501206741
+proposed_test_dataset,scene4_Optical-Map,optical-map,007,swinmatcherbit/paper_test/proposed_test_dataset/scene4_Optical-Map/007/02,00.PNG,02.PNG,02.npy,0,0,0.0,0,10.0,61.938586994074285
+proposed_test_dataset,scene4_Optical-Map,optical-map,007,swinmatcherbit/paper_test/proposed_test_dataset/scene4_Optical-Map/007/03,00.PNG,03.PNG,03.npy,0,0,0.0,0,10.0,293.4728529653512
+proposed_test_dataset,scene4_Optical-Map,optical-map,007,swinmatcherbit/paper_test/proposed_test_dataset/scene4_Optical-Map/007/04,00.PNG,04.PNG,04.npy,0,0,0.0,0,10.0,192.33402400277555
+proposed_test_dataset,scene4_Optical-Map,optical-map,007,swinmatcherbit/paper_test/proposed_test_dataset/scene4_Optical-Map/007/05,00.PNG,05.PNG,05.npy,0,0,0.0,0,10.0,81.54335699509829
+proposed_test_dataset,scene4_Optical-Map,optical-map,007,swinmatcherbit/paper_test/proposed_test_dataset/scene4_Optical-Map/007/06,00.PNG,06.PNG,06.npy,0,0,0.0,0,10.0,53.11294103739783
+proposed_test_dataset,scene4_Optical-Map,optical-map,007,swinmatcherbit/paper_test/proposed_test_dataset/scene4_Optical-Map/007/07,00.PNG,07.PNG,07.npy,0,0,0.0,0,10.0,47.74393799016252
+proposed_test_dataset,scene4_Optical-Map,optical-map,007,swinmatcherbit/paper_test/proposed_test_dataset/scene4_Optical-Map/007/08,00.PNG,08.PNG,08.npy,0,0,0.0,0,10.0,299.1313409875147
+proposed_test_dataset,scene4_Optical-Map,optical-map,007,swinmatcherbit/paper_test/proposed_test_dataset/scene4_Optical-Map/007/09,00.PNG,09.PNG,09.npy,0,0,0.0,0,10.0,88.15483399666846
+proposed_test_dataset,scene4_Optical-Map,optical-map,007,swinmatcherbit/paper_test/proposed_test_dataset/scene4_Optical-Map/007/10,00.PNG,10.PNG,10.npy,0,0,0.0,0,10.0,75.68900304613635
+proposed_test_dataset,scene4_Optical-Map,optical-map,008,swinmatcherbit/paper_test/proposed_test_dataset/scene4_Optical-Map/008/01,00.PNG,01.PNG,01.npy,0,0,0.0,0,10.0,49.171239021234214
+proposed_test_dataset,scene4_Optical-Map,optical-map,008,swinmatcherbit/paper_test/proposed_test_dataset/scene4_Optical-Map/008/02,00.PNG,02.PNG,02.npy,0,0,0.0,0,10.0,89.86807201290503
+proposed_test_dataset,scene4_Optical-Map,optical-map,008,swinmatcherbit/paper_test/proposed_test_dataset/scene4_Optical-Map/008/03,00.PNG,03.PNG,03.npy,0,0,0.0,0,10.0,67.44669197360054
+proposed_test_dataset,scene4_Optical-Map,optical-map,008,swinmatcherbit/paper_test/proposed_test_dataset/scene4_Optical-Map/008/04,00.PNG,04.PNG,04.npy,0,0,0.0,0,10.0,326.88780000898987
+proposed_test_dataset,scene4_Optical-Map,optical-map,008,swinmatcherbit/paper_test/proposed_test_dataset/scene4_Optical-Map/008/05,00.PNG,05.PNG,05.npy,0,0,0.0,0,10.0,62.21147999167442
+proposed_test_dataset,scene4_Optical-Map,optical-map,008,swinmatcherbit/paper_test/proposed_test_dataset/scene4_Optical-Map/008/06,00.PNG,06.PNG,06.npy,0,0,0.0,0,10.0,263.54055700358003
+proposed_test_dataset,scene4_Optical-Map,optical-map,008,swinmatcherbit/paper_test/proposed_test_dataset/scene4_Optical-Map/008/07,00.PNG,07.PNG,07.npy,0,0,0.0,0,10.0,77.9724299791269
+proposed_test_dataset,scene4_Optical-Map,optical-map,008,swinmatcherbit/paper_test/proposed_test_dataset/scene4_Optical-Map/008/08,00.PNG,08.PNG,08.npy,0,0,0.0,0,10.0,48.866006021853536
+proposed_test_dataset,scene4_Optical-Map,optical-map,008,swinmatcherbit/paper_test/proposed_test_dataset/scene4_Optical-Map/008/09,00.PNG,09.PNG,09.npy,0,0,0.0,0,10.0,83.90489197336137
+proposed_test_dataset,scene4_Optical-Map,optical-map,008,swinmatcherbit/paper_test/proposed_test_dataset/scene4_Optical-Map/008/10,00.PNG,10.PNG,10.npy,0,0,0.0,0,10.0,260.52469300339
+proposed_test_dataset,scene4_Optical-Map,optical-map,009,swinmatcherbit/paper_test/proposed_test_dataset/scene4_Optical-Map/009/01,00.PNG,01.PNG,01.npy,0,0,0.0,0,10.0,90.038993046619
+proposed_test_dataset,scene4_Optical-Map,optical-map,009,swinmatcherbit/paper_test/proposed_test_dataset/scene4_Optical-Map/009/02,00.PNG,02.PNG,02.npy,0,0,0.0,0,10.0,79.83732305001467
+proposed_test_dataset,scene4_Optical-Map,optical-map,009,swinmatcherbit/paper_test/proposed_test_dataset/scene4_Optical-Map/009/03,00.PNG,03.PNG,03.npy,0,0,0.0,0,10.0,372.1553179784678
+proposed_test_dataset,scene4_Optical-Map,optical-map,009,swinmatcherbit/paper_test/proposed_test_dataset/scene4_Optical-Map/009/04,00.PNG,04.PNG,04.npy,0,0,0.0,0,10.0,44.15662097744644
+proposed_test_dataset,scene4_Optical-Map,optical-map,009,swinmatcherbit/paper_test/proposed_test_dataset/scene4_Optical-Map/009/05,00.PNG,05.PNG,05.npy,0,0,0.0,0,10.0,227.48613299336284
+proposed_test_dataset,scene4_Optical-Map,optical-map,009,swinmatcherbit/paper_test/proposed_test_dataset/scene4_Optical-Map/009/06,00.PNG,06.PNG,06.npy,0,0,0.0,0,10.0,82.6841399539262
+proposed_test_dataset,scene4_Optical-Map,optical-map,009,swinmatcherbit/paper_test/proposed_test_dataset/scene4_Optical-Map/009/07,00.PNG,07.PNG,07.npy,0,0,0.0,0,10.0,84.32550198631361
+proposed_test_dataset,scene4_Optical-Map,optical-map,009,swinmatcherbit/paper_test/proposed_test_dataset/scene4_Optical-Map/009/08,00.PNG,08.PNG,08.npy,0,0,0.0,0,10.0,256.5372139797546
+proposed_test_dataset,scene4_Optical-Map,optical-map,009,swinmatcherbit/paper_test/proposed_test_dataset/scene4_Optical-Map/009/09,00.PNG,09.PNG,09.npy,0,0,0.0,0,10.0,330.1130479667336
+proposed_test_dataset,scene4_Optical-Map,optical-map,009,swinmatcherbit/paper_test/proposed_test_dataset/scene4_Optical-Map/009/10,00.PNG,10.PNG,10.npy,0,0,0.0,0,10.0,90.21678700810298

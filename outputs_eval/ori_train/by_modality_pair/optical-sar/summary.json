@@ -1,0 +1,23 @@
+{
+  "modality_pair": "optical-sar",
+  "protocol": {
+    "NCM": "number of matches with ||T(p)-q||_2 <= 5.0 pixels",
+    "Pre": "NCM divided by total produced matches for each image pair",
+    "SR": "success ratio of pairs with NCM >= 20",
+    "RMSE": "sqrt(mean squared reprojection error of correct matches) for successful pairs; 10.0 for failed pairs",
+    "filtering": "ground-truth label only; no RANSAC outlier removal",
+    "SwinMatcher_thresholds": {
+      "theta_c": 0.3,
+      "theta_f": 0.1
+    }
+  },
+  "overall": {
+    "num_pairs": 170,
+    "NCM": 1423.235294117647,
+    "Pre": 0.654103820361947,
+    "SR": 0.9647058823529412,
+    "RMSE": 3.0563485271790447,
+    "mean_matches": 1939.4588235294118,
+    "mean_runtime_ms": 49.60828905185575
+  }
+}
