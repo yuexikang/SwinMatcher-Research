@@ -7,8 +7,9 @@ __pycache__/
 
 ####
 *.ckpt
-outputs/training/wandb/
+
 outputs_demo/
+*.png
 ###
 
 # C extensions
