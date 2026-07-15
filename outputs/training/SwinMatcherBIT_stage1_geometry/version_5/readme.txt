@@ -11,3 +11,7 @@ USE_WANDB=1 WANDB_PROJECT=SwinMatcher \
 WANDB_NAME='实验2A_分离双向GT监督_h30同模态' \
 CUDA_DEVICES=1 GPUS=1 BATCH_SIZE=2 PRECISION=16 \
 bash scripts/train_stage1.sh
+
+
+
+毫无疑问的失败
