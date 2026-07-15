@@ -21,7 +21,10 @@ def spvs_coarse(data, config):
     """
     Update:
         data (dict): {
-            "conf_matrix_gt": [N, hw0, hw1],
+            "target_0to1": [N, hw0],
+            "valid_0to1": [N, hw0],
+            "target_1to0": [N, hw1],
+            "valid_1to0": [N, hw1],
             'spv_b_ids': [M]
             'spv_i_ids': [M]
             'spv_j_ids': [M]
@@ -45,7 +48,7 @@ def spvs_coarse(data, config):
     grid_pt1_c = create_meshgrid(h1, w1, False, device).reshape(1, h1*w1, 2).repeat(N, 1, 1)
     grid_pt1_i = scale1 * grid_pt1_c
 
-    # mask padded region to (0, 0), so no need to manually mask conf_matrix_gt
+    # Mask padded regions to (0, 0); they are discarded by the directional valid masks.
     if 'mask0' in data:
         grid_pt0_i = mask_pts_at_padded_regions(grid_pt0_i, data['mask0'])
         grid_pt1_i = mask_pts_at_padded_regions(grid_pt1_i, data['mask1'])
@@ -72,20 +75,26 @@ def spvs_coarse(data, config):
     nearest_index0[out_bound_mask(w_pt1_c_round, w0, h0)] = 0
 
     arange_1 = torch.arange(h0 * w0, device=device)[None].repeat(N, 1)
-    arange_0 = torch.arange(h0 * w0, device=device)[None].repeat(N, 1)
+    arange_0 = torch.arange(h1 * w1, device=device)[None].repeat(N, 1)
     arange_1[nearest_index1 == 0] = 0
     arange_0[nearest_index0 == 0] = 0
-    arange_b = torch.arange(N, device=device).unsqueeze(1)
+    # 4. Keep one directional target per softmax distribution. The historical
+    # union of both directions made one row/column contain multiple positives.
+    valid_0to1 = arange_1 != 0
+    valid_1to0 = arange_0 != 0
+    target_0to1 = nearest_index1
+    target_1to0 = nearest_index0
+    data.update({
+        'target_0to1': target_0to1,
+        'valid_0to1': valid_0to1,
+        'target_1to0': target_1to0,
+        'valid_1to0': valid_1to0,
+    })
 
-    # 4. construct a gt conf_matrix
-    conf_matrix_gt = torch.zeros(N, h0 * w0, h1 * w1, device=device)
-    conf_matrix_gt[arange_b, arange_1, nearest_index1] = 1
-    conf_matrix_gt[arange_b, nearest_index0, arange_0] = 1
-    conf_matrix_gt[:, 0, 0] = False
-
-    b_ids, i_ids, j_ids = conf_matrix_gt.nonzero(as_tuple=True)
-
-    data.update({'conf_matrix_gt': conf_matrix_gt})
+    # Fine matching is formulated from image0 to image1, so pad it only with
+    # the unambiguous 0->1 supervision rather than a bidirectional union.
+    b_ids, i_ids = valid_0to1.nonzero(as_tuple=True)
+    j_ids = target_0to1[b_ids, i_ids]
 
     # 5. save coarse matches(gt) for training fine level
     if len(b_ids) == 0:

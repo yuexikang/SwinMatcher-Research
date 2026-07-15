@@ -16,38 +16,49 @@ class SwinMatcherLoss(nn.Module):
 
     def compute_coarse_loss(self, data, weight=None):
         """
-        Point-wise CE / Focal Loss with 0 / 1 confidence as gt.
+        Directional focal loss with one target per coarse softmax distribution.
         Args:
-        data (dict): {
+            data (dict): {
             conf_matrix_0_to_1 (torch.Tensor): (N, HW0, HW1)
             conf_matrix_1_to_0 (torch.Tensor): (N, HW0, HW1)
-            conf_gt (torch.Tensor): (N, HW0, HW1)
+            target_0to1 (torch.Tensor): (N, HW0)
+            valid_0to1 (torch.Tensor): (N, HW0)
+            target_1to0 (torch.Tensor): (N, HW1)
+            valid_1to0 (torch.Tensor): (N, HW1)
             }
             weight (torch.Tensor): (N, HW0, HW1)
         """
-        conf_matrix_0_to_1 = data["conf_matrix_0_to_1"]
-        conf_matrix_1_to_0 = data["conf_matrix_1_to_0"]
-        conf_gt = data["conf_matrix_gt"]
-
-        pos_mask = conf_gt == 1
-        c_pos_w = self.pos_w
-        # corner case: no gt coarse-level match at all
-        if not pos_mask.any():  # assign a wrong gt
-            pos_mask[0, 0, 0] = True
-            if weight is not None:
-                weight[0, 0, 0] = 0.
-            c_pos_w = 0.
-
-        conf_matrix_0_to_1 = torch.clamp(conf_matrix_0_to_1, 1e-6, 1 - 1e-6)
-        conf_matrix_1_to_0 = torch.clamp(conf_matrix_1_to_0, 1e-6, 1 - 1e-6)
+        conf_matrix_0_to_1 = data['conf_matrix_0_to_1']
+        conf_matrix_1_to_0 = data['conf_matrix_1_to_0']
         alpha = self.loss_config['focal_alpha']
         gamma = self.loss_config['focal_gamma']
-        # dense supervision
-        loss_pos = - alpha * torch.pow(1 - conf_matrix_0_to_1[pos_mask], gamma) * (conf_matrix_0_to_1[pos_mask]).log()
-        loss_pos += - alpha * torch.pow(1 - conf_matrix_1_to_0[pos_mask], gamma) * (conf_matrix_1_to_0[pos_mask]).log()
-        if weight is not None:
-            loss_pos = loss_pos * weight[pos_mask]
-        return c_pos_w * loss_pos.mean()
+
+        def directional_loss(conf_matrix, target, valid, direction):
+            batch_ids, source_ids = valid.nonzero(as_tuple=True)
+            if len(batch_ids) == 0:
+                return conf_matrix.sum() * 0.0
+
+            target_ids = target[batch_ids, source_ids]
+            if direction == '0to1':
+                confidence = conf_matrix[batch_ids, source_ids, target_ids]
+                pair_weight = weight[batch_ids, source_ids, target_ids] if weight is not None else None
+            else:
+                confidence = conf_matrix[batch_ids, target_ids, source_ids]
+                pair_weight = weight[batch_ids, target_ids, source_ids] if weight is not None else None
+
+            confidence = torch.clamp(confidence, 1e-6, 1 - 1e-6)
+            loss = -alpha * torch.pow(1 - confidence, gamma) * confidence.log()
+            if pair_weight is not None:
+                loss = loss * pair_weight
+            return self.pos_w * loss.mean()
+
+        loss_0to1 = directional_loss(
+            conf_matrix_0_to_1, data['target_0to1'], data['valid_0to1'], '0to1')
+        loss_1to0 = directional_loss(
+            conf_matrix_1_to_0, data['target_1to0'], data['valid_1to0'], '1to0')
+        data['coarse_gt_0to1_count'] = data['valid_0to1'].sum().detach()
+        data['coarse_gt_1to0_count'] = data['valid_1to0'].sum().detach()
+        return loss_0to1 + loss_1to0
 
     def compute_fine_loss(self, data):
         """
@@ -148,7 +159,11 @@ class SwinMatcherLoss(nn.Module):
         loss_c = self.compute_coarse_loss(data, weight=c_weight)
         loss_c *= self.loss_config['coarse_weight']
         loss = loss_c
-        loss_scalars.update({"loss_c": loss_c.clone().detach().cpu()})
+        loss_scalars.update({
+            "loss_c": loss_c.clone().detach().cpu(),
+            "coarse_gt_0to1_count": data['coarse_gt_0to1_count'].clone().detach().cpu(),
+            "coarse_gt_1to0_count": data['coarse_gt_1to0_count'].clone().detach().cpu(),
+        })
 
         # 2. fine-level matching loss for windows
         fine_gt_positive_count = data['conf_matrix_f_gt'].sum()

@@ -99,23 +99,17 @@ def _coarse_diagnostics(batch, coarse_thr=0.3):
     if 'spv_b_ids' in batch and torch.is_tensor(batch['spv_b_ids']):
         diagnostics['coarse/supervision_matches'] = batch['spv_b_ids'].detach().numel()
 
-    conf_gt = batch.get('conf_matrix_gt')
-    if torch.is_tensor(conf_gt):
-        gt_mask = conf_gt.detach() > 0
-        positives_per_source = gt_mask.sum(dim=2)
-        positives_per_target = gt_mask.sum(dim=1)
-        source_with_positive = positives_per_source > 0
-        target_with_positive = positives_per_target > 0
+    valid_0to1 = batch.get('valid_0to1')
+    valid_1to0 = batch.get('valid_1to0')
+    if torch.is_tensor(valid_0to1) and torch.is_tensor(valid_1to0):
+        valid_0to1 = valid_0to1.detach()
+        valid_1to0 = valid_1to0.detach()
         diagnostics.update({
-            'coarse/gt_positive_count': gt_mask.sum(),
-            'coarse/gt_sources_with_positive': source_with_positive.sum(),
-            'coarse/gt_targets_with_positive': target_with_positive.sum(),
-            'coarse/gt_multi_positive_source_ratio': (
-                (positives_per_source[source_with_positive] > 1).float().mean()
-                if source_with_positive.any() else gt_mask.new_tensor(0.0, dtype=torch.float)),
-            'coarse/gt_multi_positive_target_ratio': (
-                (positives_per_target[target_with_positive] > 1).float().mean()
-                if target_with_positive.any() else gt_mask.new_tensor(0.0, dtype=torch.float)),
+            'coarse/gt_0to1_count': valid_0to1.sum(),
+            'coarse/gt_1to0_count': valid_1to0.sum(),
+            # There is exactly one target per valid directional distribution.
+            'coarse/gt_multi_positive_source_ratio': valid_0to1.new_tensor(0.0, dtype=torch.float),
+            'coarse/gt_multi_positive_target_ratio': valid_1to0.new_tensor(0.0, dtype=torch.float),
         })
 
     conf0 = batch.get('conf_matrix_0_to_1')
@@ -130,22 +124,30 @@ def _coarse_diagnostics(batch, coarse_thr=0.3):
             'coarse/conf1_over_thr_ratio': (conf1 > coarse_thr).float().mean(),
         })
 
-        spv_b = batch.get('spv_b_ids')
-        spv_i = batch.get('spv_i_ids')
-        spv_j = batch.get('spv_j_ids')
-        if all(torch.is_tensor(x) and x.numel() for x in (spv_b, spv_i, spv_j)):
-            spv_b, spv_i, spv_j = (x.detach().long() for x in (spv_b, spv_i, spv_j))
-            gt0 = conf0[spv_b, spv_i, spv_j]
-            gt1 = conf1[spv_b, spv_i, spv_j]
+        target_0to1 = batch.get('target_0to1')
+        target_1to0 = batch.get('target_1to0')
+        valid_0to1 = batch.get('valid_0to1')
+        valid_1to0 = batch.get('valid_1to0')
+        if all(torch.is_tensor(x) for x in (target_0to1, target_1to0, valid_0to1, valid_1to0)):
+            b0, i0 = valid_0to1.detach().nonzero(as_tuple=True)
+            b1, j1 = valid_1to0.detach().nonzero(as_tuple=True)
+            if not b0.numel() or not b1.numel():
+                return diagnostics
+            j0 = target_0to1.detach()[b0, i0].long()
+            i1 = target_1to0.detach()[b1, j1].long()
+            gt0 = conf0[b0, i0, j0]
+            gt1 = conf1[b1, i1, j1]
 
             # Exact rank, chunked so the diagnostic has a bounded memory cost.
             ranks0, ranks1 = [], []
-            for start in range(0, len(spv_b), 256):
+            for start in range(0, len(b0), 256):
                 stop = start + 256
-                b, i, j = spv_b[start:stop], spv_i[start:stop], spv_j[start:stop]
-                scores0, scores1 = gt0[start:stop], gt1[start:stop]
-                ranks0.append((conf0[b, i, :] > scores0[:, None]).sum(dim=1) + 1)
-                ranks1.append((conf1[b, :, j] > scores1[:, None]).sum(dim=1) + 1)
+                b, i, score = b0[start:stop], i0[start:stop], gt0[start:stop]
+                ranks0.append((conf0[b, i, :] > score[:, None]).sum(dim=1) + 1)
+            for start in range(0, len(b1), 256):
+                stop = start + 256
+                b, j, score = b1[start:stop], j1[start:stop], gt1[start:stop]
+                ranks1.append((conf1[b, :, j] > score[:, None]).sum(dim=1) + 1)
             ranks0, ranks1 = torch.cat(ranks0), torch.cat(ranks1)
 
             diagnostics.update({
