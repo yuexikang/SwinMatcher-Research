@@ -96,8 +96,8 @@ def _coarse_diagnostics(batch, coarse_thr=0.3):
     if 'fine_fallback_used' in batch and torch.is_tensor(batch['fine_fallback_used']):
         diagnostics['fine/fallback_used'] = batch['fine_fallback_used'].detach().float()
 
-    if 'spv_b_ids' in batch and torch.is_tensor(batch['spv_b_ids']):
-        diagnostics['coarse/supervision_matches'] = batch['spv_b_ids'].detach().numel()
+    if 'fine_spv_b_ids' in batch and torch.is_tensor(batch['fine_spv_b_ids']):
+        diagnostics['coarse/fine_supervision_union_matches'] = batch['fine_spv_b_ids'].detach().numel()
 
     valid_0to1 = batch.get('valid_0to1')
     valid_1to0 = batch.get('valid_1to0')
@@ -107,10 +107,22 @@ def _coarse_diagnostics(batch, coarse_thr=0.3):
         diagnostics.update({
             'coarse/gt_0to1_count': valid_0to1.sum(),
             'coarse/gt_1to0_count': valid_1to0.sum(),
-            # There is exactly one target per valid directional distribution.
-            'coarse/gt_multi_positive_source_ratio': valid_0to1.new_tensor(0.0, dtype=torch.float),
-            'coarse/gt_multi_positive_target_ratio': valid_1to0.new_tensor(0.0, dtype=torch.float),
         })
+
+        target_0to1 = batch.get('target_0to1')
+        target_1to0 = batch.get('target_1to0')
+        if torch.is_tensor(target_0to1) and torch.is_tensor(target_1to0):
+            b0, i0 = valid_0to1.nonzero(as_tuple=True)
+            if b0.numel():
+                j0 = target_0to1.detach()[b0, i0].long()
+                mutual = valid_1to0[b0, j0] & (target_1to0.detach()[b0, j0] == i0)
+                mutual_ratio = mutual.float().mean()
+            else:
+                mutual_ratio = valid_0to1.new_tensor(0.0, dtype=torch.float)
+            diagnostics.update({
+                'coarse/gt_mutual_ratio': mutual_ratio,
+                'coarse/gt_direction_conflict_ratio': 1.0 - mutual_ratio,
+            })
 
     conf0 = batch.get('conf_matrix_0_to_1')
     conf1 = batch.get('conf_matrix_1_to_0')
@@ -138,17 +150,38 @@ def _coarse_diagnostics(batch, coarse_thr=0.3):
             gt0 = conf0[b0, i0, j0]
             gt1 = conf1[b1, i1, j1]
 
-            # Exact rank, chunked so the diagnostic has a bounded memory cost.
-            ranks0, ranks1 = [], []
+            # Ties are common near uniform confidence. Report their complete
+            # interval and strict top-1 rather than optimistic best rank alone.
+            rank0_best, rank0_worst, strict_top1_0, margins0 = [], [], [], []
+            rank1_best, rank1_worst, strict_top1_1, margins1 = [], [], [], []
             for start in range(0, len(b0), 256):
                 stop = start + 256
-                b, i, score = b0[start:stop], i0[start:stop], gt0[start:stop]
-                ranks0.append((conf0[b, i, :] > score[:, None]).sum(dim=1) + 1)
+                b, i, j, score = b0[start:stop], i0[start:stop], j0[start:stop], gt0[start:stop]
+                scores = conf0[b, i, :]
+                max_negative = scores.clone()
+                max_negative[torch.arange(len(scores), device=scores.device), j] = -torch.inf
+                max_negative = max_negative.max(dim=1).values
+                rank0_best.append((scores > score[:, None]).sum(dim=1) + 1)
+                rank0_worst.append((scores >= score[:, None]).sum(dim=1))
+                strict_top1_0.append(score > max_negative)
+                margins0.append(score - max_negative)
             for start in range(0, len(b1), 256):
                 stop = start + 256
-                b, j, score = b1[start:stop], j1[start:stop], gt1[start:stop]
-                ranks1.append((conf1[b, :, j] > score[:, None]).sum(dim=1) + 1)
-            ranks0, ranks1 = torch.cat(ranks0), torch.cat(ranks1)
+                b, i, j, score = b1[start:stop], i1[start:stop], j1[start:stop], gt1[start:stop]
+                scores = conf1[b, :, j]
+                max_negative = scores.clone()
+                max_negative[torch.arange(len(scores), device=scores.device), i] = -torch.inf
+                max_negative = max_negative.max(dim=1).values
+                rank1_best.append((scores > score[:, None]).sum(dim=1) + 1)
+                rank1_worst.append((scores >= score[:, None]).sum(dim=1))
+                strict_top1_1.append(score > max_negative)
+                margins1.append(score - max_negative)
+            rank0_best, rank0_worst = torch.cat(rank0_best), torch.cat(rank0_worst)
+            rank1_best, rank1_worst = torch.cat(rank1_best), torch.cat(rank1_worst)
+            rank0_avg = (rank0_best.float() + rank0_worst.float()) / 2
+            rank1_avg = (rank1_best.float() + rank1_worst.float()) / 2
+            strict_top1_0, strict_top1_1 = torch.cat(strict_top1_0), torch.cat(strict_top1_1)
+            margins0, margins1 = torch.cat(margins0), torch.cat(margins1)
 
             diagnostics.update({
                 'coarse/gt_conf0_mean': gt0.mean(),
@@ -157,12 +190,22 @@ def _coarse_diagnostics(batch, coarse_thr=0.3):
                 'coarse/gt_conf1_median': gt1.median(),
                 'coarse/gt_conf0_over_thr_ratio': (gt0 > coarse_thr).float().mean(),
                 'coarse/gt_conf1_over_thr_ratio': (gt1 > coarse_thr).float().mean(),
-                'coarse/gt_rank0_mean': ranks0.float().mean(),
-                'coarse/gt_rank1_mean': ranks1.float().mean(),
-                'coarse/gt_rank0_median': ranks0.float().median(),
-                'coarse/gt_rank1_median': ranks1.float().median(),
-                'coarse/gt_top1_0_ratio': (ranks0 == 1).float().mean(),
-                'coarse/gt_top1_1_ratio': (ranks1 == 1).float().mean(),
+                'coarse/gt_rank0_mean': rank0_avg.mean(),
+                'coarse/gt_rank1_mean': rank1_avg.mean(),
+                'coarse/gt_rank0_median': rank0_avg.median(),
+                'coarse/gt_rank1_median': rank1_avg.median(),
+                'coarse/gt_rank0_avg_mean': rank0_avg.mean(),
+                'coarse/gt_rank1_avg_mean': rank1_avg.mean(),
+                'coarse/gt_rank0_avg_median': rank0_avg.median(),
+                'coarse/gt_rank1_avg_median': rank1_avg.median(),
+                'coarse/gt_rank0_best_mean': rank0_best.float().mean(),
+                'coarse/gt_rank1_best_mean': rank1_best.float().mean(),
+                'coarse/gt_rank0_worst_mean': rank0_worst.float().mean(),
+                'coarse/gt_rank1_worst_mean': rank1_worst.float().mean(),
+                'coarse/gt_top1_0_ratio': strict_top1_0.float().mean(),
+                'coarse/gt_top1_1_ratio': strict_top1_1.float().mean(),
+                'coarse/gt_margin0_mean': margins0.mean(),
+                'coarse/gt_margin1_mean': margins1.mean(),
             })
 
     return diagnostics
@@ -456,6 +499,8 @@ class PL_SwinMatcher(pl.LightningModule):
                 f"raw_pred={int(_value('coarse/raw_pred_match_count'))} "
                 f"gt_pad={int(_value('coarse/gt_padded_for_fine_count'))} "
                 f"fine_input={int(_value('coarse/fine_input_match_count'))} "
+                f"mutual={_value('coarse/gt_mutual_ratio'):.3f} "
+                f"conflict={_value('coarse/gt_direction_conflict_ratio'):.3f} "
                 f"gt_conf=({_value('coarse/gt_conf0_mean'):.6f}, "
                 f"{_value('coarse/gt_conf1_mean'):.6f}) "
                 f"gt_rank=({_value('coarse/gt_rank0_mean'):.1f}, "

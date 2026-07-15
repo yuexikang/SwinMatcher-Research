@@ -189,21 +189,22 @@ class CoarseMatching(nn.Module):
                     (num_matches_train - self.train_pad_num_gt_min, ),
                     device=_device)
 
-            # gt_pad_indices is to select from gt padding. e.g. max(3787-4800, 200)
+            # gt_pad_indices selects the original bidirectional GT union used
+            # exclusively to supply fine-level training windows.
             gt_pad_indices = torch.randint(
-                    len(data['spv_b_ids']),
+                    len(data['fine_spv_b_ids']),
                     (max(num_matches_train - num_matches_pred,
                         self.train_pad_num_gt_min), ),
                     device=_device)
             data['coarse_gt_padded_for_fine_count'] = torch.tensor(
                 len(gt_pad_indices), device=_device, dtype=torch.long)
-            mconf_gt = torch.zeros(len(data['spv_b_ids']), device=_device)  # set conf of gt paddings to all zero
+            mconf_gt = torch.zeros(len(data['fine_spv_b_ids']), device=_device)  # set conf of gt paddings to all zero
 
             b_ids, i_ids, j_ids, mconf = map(
                 lambda x, y: torch.cat([x[pred_indices], y[gt_pad_indices]],
                                        dim=0),
-                *zip([b_ids, data['spv_b_ids']], [i_ids, data['spv_i_ids']],
-                     [j_ids, data['spv_j_ids']], [mconf, mconf_gt]))
+                *zip([b_ids, data['fine_spv_b_ids']], [i_ids, data['fine_spv_i_ids']],
+                     [j_ids, data['fine_spv_j_ids']], [mconf, mconf_gt]))
 
         data['coarse_fine_input_match_count'] = torch.tensor(
             len(b_ids), device=_device, dtype=torch.long)

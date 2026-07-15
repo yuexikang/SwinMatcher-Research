@@ -25,9 +25,9 @@ def spvs_coarse(data, config):
             "valid_0to1": [N, hw0],
             "target_1to0": [N, hw1],
             "valid_1to0": [N, hw1],
-            'spv_b_ids': [M]
-            'spv_i_ids': [M]
-            'spv_j_ids': [M]
+            'fine_spv_b_ids': [M]
+            'fine_spv_i_ids': [M]
+            'fine_spv_j_ids': [M]
             'spv_w_pt0_i': [N, hw0, 2], in original image resolution
             'spv_pt1_i': [N, hw1, 2], in original image resolution
         }
@@ -71,19 +71,15 @@ def spvs_coarse(data, config):
     def out_bound_mask(pt, w, h):
         return (pt[..., 0] < 0) + (pt[..., 0] >= w) + (pt[..., 1] < 0) + (pt[..., 1] >= h)
 
-    nearest_index1[out_bound_mask(w_pt0_c_round, w1, h1)] = 0
-    nearest_index0[out_bound_mask(w_pt1_c_round, w0, h0)] = 0
+    invalid_0to1 = out_bound_mask(w_pt0_c_round, w1, h1)
+    invalid_1to0 = out_bound_mask(w_pt1_c_round, w0, h0)
 
-    arange_1 = torch.arange(h0 * w0, device=device)[None].repeat(N, 1)
-    arange_0 = torch.arange(h1 * w1, device=device)[None].repeat(N, 1)
-    arange_1[nearest_index1 == 0] = 0
-    arange_0[nearest_index0 == 0] = 0
     # 4. Keep one directional target per softmax distribution. The historical
     # union of both directions made one row/column contain multiple positives.
-    valid_0to1 = arange_1 != 0
-    valid_1to0 = arange_0 != 0
-    target_0to1 = nearest_index1
-    target_1to0 = nearest_index0
+    valid_0to1 = ~invalid_0to1
+    valid_1to0 = ~invalid_1to0
+    target_0to1 = nearest_index1.clamp(0, h1 * w1 - 1)
+    target_1to0 = nearest_index0.clamp(0, h0 * w0 - 1)
     data.update({
         'target_0to1': target_0to1,
         'valid_0to1': valid_0to1,
@@ -91,10 +87,22 @@ def spvs_coarse(data, config):
         'valid_1to0': valid_1to0,
     })
 
-    # Fine matching is formulated from image0 to image1, so pad it only with
-    # the unambiguous 0->1 supervision rather than a bidirectional union.
-    b_ids, i_ids = valid_0to1.nonzero(as_tuple=True)
-    j_ids = target_0to1[b_ids, i_ids]
+    # Experiment 2A changes coarse loss only. Preserve the original union of
+    # directional GT pairs as fine-level padding candidates.
+    b0, i0 = valid_0to1.nonzero(as_tuple=True)
+    j0 = target_0to1[b0, i0]
+    b1, j1 = valid_1to0.nonzero(as_tuple=True)
+    i1 = target_1to0[b1, j1]
+    fine_pairs = torch.cat([
+        torch.stack([b0, i0, j0], dim=1),
+        torch.stack([b1, i1, j1], dim=1),
+    ], dim=0)
+    fine_pairs = torch.unique(fine_pairs, dim=0)
+    b_ids, i_ids, j_ids = fine_pairs.unbind(dim=1) if fine_pairs.numel() else (
+        torch.empty(0, device=device, dtype=torch.long),
+        torch.empty(0, device=device, dtype=torch.long),
+        torch.empty(0, device=device, dtype=torch.long),
+    )
 
     # 5. save coarse matches(gt) for training fine level
     if len(b_ids) == 0:
@@ -105,9 +113,9 @@ def spvs_coarse(data, config):
         j_ids = torch.tensor([0], device=device)
 
     data.update({
-        'spv_b_ids': b_ids,
-        'spv_i_ids': i_ids,
-        'spv_j_ids': j_ids
+        'fine_spv_b_ids': b_ids,
+        'fine_spv_i_ids': i_ids,
+        'fine_spv_j_ids': j_ids
     })
 
     # 6. save intermediate results (for fast fine-level computation)
