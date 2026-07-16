@@ -4,6 +4,7 @@ set -euo pipefail
 CUDA_DEVICES="${CUDA_DEVICES:-0}"
 GPUS="${GPUS:-1}"
 BATCH_SIZE="${BATCH_SIZE:-2}"
+PRECISION="${PRECISION:-32}"
 RESUME_CKPT_PATH="${RESUME_CKPT_PATH:-}"
 CKPT_PATH="${1:-}"
 if [[ -n "${PYTHON_CMD:-}" ]]; then
@@ -30,7 +31,7 @@ cmd=(
   --gpus "$GPUS"
   --batch_size "$BATCH_SIZE"
   --num_workers 4
-  --precision 16
+  --precision "$PRECISION"
 )
 if [[ -n "$MAX_EPOCHS" ]]; then
   cmd+=(--max_epochs "$MAX_EPOCHS")
@@ -54,7 +55,7 @@ if [[ "$USE_WANDB" == "1" ]]; then
 fi
 
 echo "CUDA_VISIBLE_DEVICES=$CUDA_DEVICES"
-echo "GPUS=$GPUS BATCH_SIZE_PER_GPU=$BATCH_SIZE TOTAL_BATCH=$((GPUS * BATCH_SIZE))"
+echo "GPUS=$GPUS BATCH_SIZE_PER_GPU=$BATCH_SIZE TOTAL_BATCH=$((GPUS * BATCH_SIZE)) PRECISION=$PRECISION"
 echo "WANDB_MODE=$WANDB_MODE WANDB_START_METHOD=$WANDB_START_METHOD USE_WANDB=$USE_WANDB"
 printf 'Command: CUDA_VISIBLE_DEVICES=%q' "$CUDA_DEVICES"
 printf ' %q' "${cmd[@]}"
